@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Project Title</title>
+  <title>Shared-Aperture Stacked-Patch ESA</title>
   <link rel="icon" href="./favicon.ico" type="image/x-icon">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css" />
@@ -13,212 +13,1312 @@
     src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/shoelace-autoloader.js"></script>
 
   <link rel="stylesheet" href="./index.css">
-
   <link rel="stylesheet" href="./components/team-member/team-member.css">
-  <script type="module" src="./components/team-member/team-member.js"></script>
-
   <link rel="stylesheet" href="./components/table-of-content/table-of-content.css">
-
-  <script type="module" src="./components/image/image-component.js"></script>
-
-  <script type="module" src="./components/video/video.js"></script>
-
   <link rel="stylesheet" href="./components/references/references.css">
-
   <link rel="stylesheet" href="./components/scroll-to-top/scroll-to-top.css">
-  <script src="./components/scroll-to-top/scroll-to-top.js"></script>
+  <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
 
+  <script type="module" src="./components/team-member/team-member.js"></script>
+  <script type="module" src="./components/image/image-component.js"></script>
+  <script type="module" src="./components/video/video.js"></script>
+  <script src="./components/scroll-to-top/scroll-to-top.js"></script>
   <script src="./components/table-component/table-component.js"></script>
 
-  <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+  <style>
+    /* Paragraph indentation */
+    p {
+      text-indent: 2em;
+      margin-bottom: 1em;
+    }
+
+    /* Align all section content */
+    .content > div {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1em;
+    }
+
+    /* Consistent spacing for headings */
+    h2, h3, h4 {
+      margin-top: 2em;
+      margin-bottom: 1em;
+    }
+  </style>
 </head>
 
 <body>
   <div class="content">
-    <h1>Ku-Band Ground Station for Low Earth Orbit (LEO) Satellites</h1>
+    <h1>Shared-Aperture Stacked-Patch Electronically Steered Antenna (ESA) for Ku-Band Low Earth Orbit (LEO) Satellites</h1>
 
-    <!-- This is the team member component use to display details about your team members -->
+    <!-- Team member component -->
     <div class="team-member-wrapper">
-      <team-member avatar="assets/sofa (1).png" name="Khoo Kye Wen" department="Electrical Engineering"
-        year="4"></team-member>
+      <team-member avatar="assets/sofa (1).png" name="Khoo Kye Wen" department="Electrical Engineering" year="Year 4"></team-member>
     </div>
 
-    <!-- This is a divide from the shoelace library for aesthetic purpose -->
     <sl-divider></sl-divider>
 
-    <!-- This is the table-of-content component use to define all of the link directly to each section -->
-    <div class="table-of-content">
-      <h2>Table of Contents</h2>
-      <sl-tree>
-        <sl-tree-item expanded>
-          <a href="#section-header-1">1. Section Header 1</a>
-          <sl-tree-item>
-            <a href="#sub-section-1-header-1">1.1. Sub-section Header 1</a>
-          </sl-tree-item>
-          <sl-tree-item>
-            <a href="#sub-section-1-header-2">1.2. Sub-section Header 2</a>
-          </sl-tree-item>
-        </sl-tree-item>
+    <!-- Table of contents -->
+    <!-- Table of contents -->
+<div class="table-of-content">
+  <h2>Table of Contents</h2>
+  <sl-tree>
+    <!-- 1 -->
+    <sl-tree-item expanded>
+      <a href="#section-header-1">1. Introduction</a>
+    </sl-tree-item>
 
-        <sl-tree-item expanded>
-          <a href="#section-header-2">2. Section Header 1</a>
-          <sl-tree-item>
-            <a href="#sub-section-2-header-1">2.1. Sub-section Header 1</a>
-          </sl-tree-item>
-          <sl-tree-item>
-            <a href="#sub-section-2-header-2">2.2. Sub-section Header 2</a>
-          </sl-tree-item>
-        </sl-tree-item>
+    <!-- 2 -->
+    <sl-tree-item expanded>
+      <a href="#section-header-2">2. Problem Definition</a>
 
-        <sl-tree-item>
-          <a href="#references">References</a>
-        </sl-tree-item>
-      </sl-tree>
-    </div>
+      <sl-tree-item><a href="#sub-section-2-1">2.1 Hardware Inefficiency in Current ESA Architectures</a></sl-tree-item>
+      <sl-tree-item><a href="#sub-section-2-2">2.2 Protocol Fragmentation and Vendor Lock-in</a></sl-tree-item>
+      <sl-tree-item><a href="#sub-section-2-3">2.3 Scalability and Future-Proofing</a></sl-tree-item>
+      <sl-tree-item><a href="#sub-section-2-4">2.4 Problem Statement</a></sl-tree-item>
+    </sl-tree-item>
+
+    <!-- 3 -->
+    <sl-tree-item expanded>
+      <a href="#section-header-3">3. Value Proposition</a>
+
+      <sl-tree-item><a href="#sub-section-3-1">3.1 Value Proposition Canvas</a></sl-tree-item>
+      <sl-tree-item><a href="#sub-section-3-2">3.2 Value Proposition Statement</a></sl-tree-item>
+    </sl-tree-item>
+
+    <!-- 4 -->
+    <sl-tree-item expanded>
+      <a href="#section-header-4">4. Design Statement/Methodology/Strategy</a>
+
+      <sl-tree-item><a href="#sub-section-4-1">4.1 Design Statement</a></sl-tree-item>
+
+      <sl-tree-item expanded>
+        <a href="#sub-section-4-2">4.2 Design Methodology</a>
+
+        <sl-tree-item><a href="#sub-section-4-2-1">4.2.1 Literature Review</a></sl-tree-item>
+        <sl-tree-item><a href="#sub-section-4-2-2">4.2.2 Competitor Analysis</a></sl-tree-item>
+      </sl-tree-item>
+
+      <sl-tree-item>
+        <a href="#sub-section-4-3">4.3 Design Strategy</a>
+      </sl-tree-item>
+    </sl-tree-item>
+
+   <!-- 5 -->
+<sl-tree-item expanded>
+  <a href="#section-header-5">5. Concept Design</a>
+
+  <!-- 5.1 -->
+  <sl-tree-item expanded>
+    <a href="#sub-section-5-1">5.1 Concept Selection</a>
+
+    <sl-tree-item>
+      <a href="#sub-section-5-1-1">5.1.1 Morphological Chart</a>
+    </sl-tree-item>
+
+    <sl-tree-item>
+      <a href="#sub-section-5-1-2">5.1.2 Selection Criteria</a>
+    </sl-tree-item>
+  </sl-tree-item>
+
+  <!-- 5.2 -->
+  <sl-tree-item expanded>
+    <a href="#sub-section-5-2">5.2 Design Solution</a>
+
+    <sl-tree-item>
+      <a href="#sub-section-5-2-1">5.2.1 Stack Architecture</a>
+    </sl-tree-item>
+
+    <sl-tree-item>
+      <a href="#sub-section-5-2-2">5.2.2 Material Selection</a>
+    </sl-tree-item>
+
+    <sl-tree-item>
+      <a href="#sub-section-5-2-3">5.2.3 Dimensioning of Key Parameters</a>
+    </sl-tree-item>
+  </sl-tree-item>
+
+</sl-tree-item>
+
+
+    <!-- 6 -->
+    <sl-tree-item expanded>
+      <a href="#section-header-6">6. Prototype &amp; Testing Plan</a>
+
+      <sl-tree-item expanded><a href="#sub-section-6-1">6.1 Prototype</a>
+
+      <sl-tree-item>
+        <a href="#sub-section-6-1-1">6.1.1 Unit-cell design and simulation</a>
+      </sl-tree-item>
+
+      <sl-tree-item>
+        <a href="#sub-section-6-1-2">6.1.2 Finite Array Scaling</a>
+
+      </sl-tree-item>
+      </sl-tree-item>
+
+      <sl-tree-item expanded>
+        <a href="#sub-section-6-2">6.2 Testing Plan</a>
+        <sl-tree-item><a href="#sub-section-6-2-1">6.2.1 Initial testing</a></sl-tree-item>
+      </sl-tree-item>
+    </sl-tree-item>
+
+    <!-- 7 -->
+    <sl-tree-item>
+      <a href="#section-header-7">7. Shortcomings</a>
+    </sl-tree-item>
+
+    <!-- 8 -->
+    <sl-tree-item>
+      <a href="#section-header-8">8. Future Work</a>
+
+      <sl-tree-item><a href="#sub-section-8-1">8.1 Project Timeline</a></sl-tree-item>
+    </sl-tree-item>
+
+    <!-- Appendices -->
+    <sl-tree-item expanded>
+      <a href="#appendices">Appendices</a>
+
+      <sl-tree-item><a href="#appendixA">Appendix A</a></sl-tree-item>
+      <sl-tree-item><a href="#appendixB">Appendix B</a></sl-tree-item>
+      <sl-tree-item><a href="#appendixC">Appendix C</a></sl-tree-item>
+      <sl-tree-item><a href="#appendixD">Appendix D</a></sl-tree-item>
+      <sl-tree-item><a href="#appendixE">Appendix E</a></sl-tree-item>
+      <sl-tree-item><a href="#appendixF">Appendix F</a></sl-tree-item>
+      <sl-tree-item><a href="#appendixG">Appendix G</a></sl-tree-item>
+      <sl-tree-item><a href="#appendixH">Appendix H</a></sl-tree-item>
+    </sl-tree-item>
+
+    <!-- References -->
+    <sl-tree-item>
+      <a href="#references">References</a>
+    </sl-tree-item>
+  </sl-tree>
+</div>
+
+
     <sl-divider></sl-divider>
 
-    <div>
+    <!-- Section 1: Introduction -->
+    <div id="section-header-1">
+      <h2>1. Introduction</h2>
 
-      <!-- This is an example of what a section might look like -->
-      <div id="section-header-1">
-        <h2> 1. Section Header 1 </h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna
-          aliqua. Tincidunt ornare massa eget egestas. At tellus at urna condimentum mattis pellentesque id nibh tortor.
-          Elementum sagittis vitae et leo duis ut diam. Morbi tristique senectus et netus et malesuada fames.
-          Suspendisse
-          ultrices gravida dictum fusce ut placerat orci. Risus nullam eget felis eget nunc lobortis mattis aliquam
-          faucibus
-          (Brody, 2007). Eget sit amet tellus cras adipiscing enim eu turpis egestas. Aliquet nibh praesent tristique
-          magna
-          sit amet purus. Adipiscing bibendum est ultricies integer quis auctor elit sed. Fermentum et sollicitudin ac
-          orci
-          phasellus egestas tellus rutrum. At in tellus integer feugiat scelerisque varius morbi enim nunc. Volutpat
-          blandit
-          aliquam etiam erat velit scelerisque in. Id diam maecenas ultricies mi eget mauris pharetra et. Nec dui nunc
-          mattis
-          enim ut tellus elementum sagittis vitae.
-        </p>
-      </div>
+      <p>
+        Geostationary Earth Orbit (GEO) satellites operate at ~35,786km above Earth’s equator, appearing fixed relative to the ground. This allows the use of fixed, non-tracking ground antennas<sup>[1]</sup>, simplifying infrastructure and reducing cost<sup>[2]</sup>. Furthermore, they utilize standardized modems and protocols<sup>[3]</sup>.
+      </p>
 
-      <div id="sub-section-1-header-1">
-        <h3>1.1 Sub-section Header 1</h3>
-        <p>
-          Ultrices dui sapien eget mi. Nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit. Dolor purus non enim
-          praesent elementum facilisis. Lacus vestibulum sed arcu non odio euismod lacinia at. Metus aliquam eleifend mi
-          in nulla. Lacus sed viverra tellus in hac habitasse platea. Varius quam quisque id diam vel quam elementum
-          pulvinar. Eleifend quam adipiscing vitae proin sagittis nisl rhoncus. Diam ut venenatis tellus in metus
-          vulputate. Lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque. Venenatis lectus magna
-          fringilla
-          urna. In nisl nisi scelerisque eu ultrices. Velit egestas dui id ornare arcu odio ut sem nulla. Quam id leo in
-          vitae. Egestas congue quisque egestas diam in arcu cursus euismod quis. Porttitor leo a diam sollicitudin
-          tempor
-          id eu nisl.
-        </p>
-      </div>
+      <p>
+        Low Earth Orbit (LEO) satellites operate much closer to Earth (~160-2,000km) and travel rapidly (~90-120minutes/orbit)<sup>[1]</sup>, enabling high-throughput and low-latency services<sup>[2]</sup>. As a result, ground terminals face challenges like frequent hand-overs, rapidly varying geometry, Doppler effects, and tracking needs<sup>[5]</sup>. Many contemporary LEO operators adopt proprietary protocols, increasing interoperability barriers, vendor lock-in, and raising system complexity<sup>[3][5]</sup>. Moreover, the growth of LEO constellations is projected to reach tens of thousands in the coming decade to deliver global coverage<sup>[6]</sup>, thus pushing demand for low-complexity, mass-manufacturable user terminals<sup>[7]</sup> that deliver high gain, rapid beam steering, tracking, and low size, weight, and power (SWaP)<sup>[3][8]</sup>.
+      </p>
 
-      <div id="sub-section-1-header-2">
-        <h3>1.2 Sub-section Header 2</h3>
-        <p>
-          Fermentum dui faucibus in ornare quam viverra orci. Donec ultrices tincidunt arcu non sodales. A diam maecenas
-          sed enim ut sem viverra. Semper viverra nam libero justo laoreet sit. Mi sit amet mauris commodo quis. Auctor
-          augue mauris augue neque gravida in fermentum et. Auctor elit sed vulputate mi sit amet. Maecenas pharetra
-          convallis posuere morbi leo urna. Sem nulla pharetra diam sit amet nisl. Id nibh tortor id aliquet lectus.
-          Nibh
-          nisl condimentum id venenatis a condimentum vitae sapien. Convallis posuere morbi leo urna molestie at
-          elementum.
-        </p>
+      <p>
+        Phased-array electronically-steered antennas (ESAs) provide a compelling LEO and mobile ground-terminal solution<sup>[3]</sup>. Unlike mechanical dishes, ESAs steer beams via phase-shifting/beamforming across an array without moving, enabling rapid beam switching, a low profile, multi-satellite/multi-beam capability, reduced wear and maintenance, and improved links latencies/dynamics<sup>[3][8][9][10]</sup>. Figure 1 substantiates their increasing commercial demand.
+      </p>
 
-        <!-- This is an example of how you might use the image component -->
-        <image-component tag="image" source="assets/requirement.png"
-          subtitle="Image 1: iDP suggested pathway"></image-component>
-      </div>
+      <image-component
+        tag="image"
+        source="assets/table1.png"
+        subtitle="Table 1: Comparison between GEO and LEO terminals<sup>[1]</sup><sup>[2]</sup><sup>[6]</sup><sup>[10]</sup><sup>[11]</sup><sup>[12]</sup>">
+      </image-component>
+
+      <image-component
+        tag="image"
+        source="assets/figure1.png"
+        subtitle="Figure 1: CAGR of phased-array ESAs<sup>[13]</sup>">
+      </image-component>
+
+      <image-component
+        tag="image"
+        source="assets/figure2.png"
+        subtitle="Figure 2: Low profile ESA on an aircraft<sup>[14]</sup>">
+      </image-component>
+
+      <p>
+        In Singapore, ST Engineering Advanced Networks and Sensors (STE ANS) are establishing leadership in 5G and satellite communications. Their work in radar, satellite, and ground antenna manufacturing underlines Singapore’s ambitions in this sector. This report documents our collaboration with STE ANS to develop a pioneering ESA terminal for LEO constellations.
+      </p>
     </div>
 
-
-    <br />
-    <br />
     <sl-divider></sl-divider>
-    <div>
-      <div id="section-header-2">
-        <h2>2. Section Header 2</h2>
+
+    <!-- Section 2: Problem Definition -->
+    <div id="section-header-2">
+      <h2>2. Problem Definition</h2>
+
+      <div id="sub-section-2-1">
+        <h3>2.1 Hardware Inefficiency in Current ESA Architectures</h3>
         <p>
-          Ornare arcu dui vivamus arcu felis bibendum ut tristique et. Mi proin sed libero enim sed faucibus turpis in
-          eu. Odio ut sem nulla pharetra diam sit. Nibh cras pulvinar mattis nunc sed blandit libero. Lacus sed viverra
-          tellus in hac habitasse platea dictumst vestibulum. At augue eget arcu dictum varius duis. Mauris ultrices
-          eros in cursus turpis massa (Lindberg, 1967). Libero nunc consequat interdum varius sit amet mattis. Ut ornare
-          lectus sit amet est placerat in egestas erat. Elementum curabitur vitae nunc sed. Proin nibh nisl condimentum
-          id venenatis a condimentum vitae sapien (Chamberlin et al., 2008). Vitae tempus quam pellentesque nec nam
-          aliquam sem.
+          Traditional ESA terminals use separate apertures for transmit (Tx) and receive (Rx), resulting in larger physical footprints, higher SWaP, and cost<sup>[5][15]</sup>. Moreover, achieving necessary performance like wide scan angles, high gain, and circular polarization to mitigate fading and polarization mismatch, is highly challenging<sup>[16][17]</sup>. The demand is further accentuated in mobile or rooftop terminals where size and manufacturability matter<sup>[3][8]</sup>.
         </p>
       </div>
 
-      <div id="sub-section-2-header-1">
-        <h3>2.1. Sub-section Header 1</h3>
+      <div id="sub-section-2-2">
+        <h3>2.2 Protocol Fragmentation and Vendor Lock-in</h3>
         <p>
-          Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-          Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-          etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-          vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-          Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-          fames ac. <a href="#image">Link to the image above</a>
+          LEO operators often employ non-standardized and proprietary protocols<sup>[5][18]</sup>. This forces terminal manufacturers to design provider-specific hardware and modem integrations, restricting interoperability<sup>[3][18]</sup>. As a result, customers are locked into single-vendor ecosystems, reducing flexibility and driving up costs<sup>[3]</sup>.
         </p>
-
-        <!-- This is an example of how you might use the video component -->
-        <video-component tag="rick" source="https://www.youtube.com/embed/dQw4w9WgXcQ"
-          subtitle="Video: Never gonna give you up?"></video-component>
       </div>
 
-      <div id="sub-section-2-header-2">
-        <h3>2.2. Sub-section Header 2</h3>
+      <div id="sub-section-2-3">
+        <h3>2.3 Scalability and Future-Proofing</h3>
         <p>
-          Vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra. Dignissim convallis aenean et tortor at
-          risus viverra adipiscing. Facilisi nullam vehicula ipsum a arcu cursus. Adipiscing elit pellentesque
-          habitant
-          morbi tristique senectus et netus. Turpis massa tincidunt dui ut ornare lectus. Suspendisse sed nisi lacus
-          sed. Diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Ut ornare lectus sit amet est
-          placerat in egestas. Magna fringilla urna porttitor rhoncus. Imperdiet dui accumsan sit amet.
+          End-users and integrators increasingly require scalable, interoperable terminals that can operate seamlessly across networks. Current solutions lack this versatility, creating a gap in the market for a universal, high-performance, multi-orbit ground terminal, which adapts to evolving standards and supports multiple service providers, enabling long-term viability and return on investment<sup>[3][8]</sup>.
         </p>
 
-        <!-- This is an example of how you might use the table component -->
-        <table-component subtitle="Table: Demo table">
-          <div id="table-1"></div>
-        </table-component>
+        <image-component
+          tag="image"
+          source="assets/figure3.png"
+          subtitle="Figure 3: Fishbone Diagram of Problem Definition">
+        </image-component>
+      </div>
+
+      <div id="sub-section-2-4">
+        <h3>2.4 Problem Statement</h3>
+        <p>
+          This leads us to our problem statement:
+        <div>  
+          <image-component
+        tag="image"
+        source="assets/PS.png"
+        subtitle="Figure 4: Problem Statement">
+      </image-component>
+        </p>
       </div>
     </div>
 
-    <!-- This is an example of how you can use the references component to create references -->
-    <div id="references" class="references">
-      <sl-divider></sl-divider>
-      <h2>References</h2>
-      <ul>
-        <li>
-          Brody, J. E. (2007, December 11). Mental reserves keep brain agile. The New York Times. Retrieved from
-          http://www.dowjones.com/factiva/
-        </li>
-        <li>
-          Chamberlin, J., Novotney, A., Packard, E., & Price, M. (2008, May). Enhancing worker well-being: Occupational
-          health psychologists convene to share their research on work, stress, and health. Monitor on Psychology,
-          39(5), 26-29.
-        </li>
-        <li>
-          Jones, T. J., & Fields, N. (2003). Emotional quotient and personality. E-Journal of Applied Psychology, 2(2),
-          38-45. Retrieved from http://ejournalappliedpsyc/index.php/ejap
-        </li>
+    <sl-divider></sl-divider>
+
+    <!-- Section 3: Value Proposition -->
+    <div id="section-header-3">
+      <h2>3. Value Proposition</h2>
+
+      <div id="sub-section-3-1">
+        <h3>3.1 Value Proposition Canvas</h3>
+        <p>
+          Our value proposition canvas demonstrates how our shared-aperture, stacked patch ESA design will align with real customer needs, from terminal developers/integrators to commercial users.
+        </p>
+
+        <image-component
+          tag="image"
+          source="assets/figure4.png"
+          subtitle="Figure 5: Value Proposition Canvas">
+        </image-component>
+      </div>
+
+      <div id="sub-section-3-2">
+        <h3>3.2 Value Proposition Statement</h3>
+        <p>
+          Our solution directly addresses industry challenges by integrating both Tx and Rx functions within a single, co-located aperture, significantly reducing SWaP while maintaining high link reliability and polarization purity.
+        </p>
+
+        <p>
+          This inherently interoperable design is software/geometrically reconfigurable for different operators, frequency plans, and multi-orbit constellations, minimizing hardware redesign<sup>[3]</sup>.
+        </p>
+
+        <p>
+          Furthermore, it is hardware-agnostic, integrating seamlessly with commercial modem/beamforming IC, eliminating vendor lock-in<sup>[3]</sup>. Operating across a relatively wide Ku-band also supports multi-operator operation<sup>[3]</sup>.          Moreover, our scalable ESA array allows flexible adaptation to varying performance and cost requirements, ensuring system longevity and upgradability.
+
+        </p>
+
+        
+        
+
+        <p>
+          This enables terminal manufacturers to deliver compact, scalable, and future-ready terminals for next-generation satellite connectivity, leading us to our value proposition statement:
+        </p>
+         <image-component
+        tag="image"
+        source="assets/VS.png"
+        subtitle="Figure 6: Value Proposition Statement">
+      </div>
+    </div>
+
+    <sl-divider></sl-divider>
+
+    <!-- Section 4: Design Statement/Methodology/Strategy -->
+    <div id="section-header-4">
+      <h2>4. Design Statement/Methodology/Strategy</h2>
+
+      <div id="sub-section-4-1">
+        <h3>4.1 Design Statement</h3>
+        <p>
+          To identify industrial LEO ESA terminal requirements, interviews were conducted with ground terminal developers (STE ANS and Astrolynk Technologies Inc.). Using a “Demand &amp; Wish” table, the requirements are mapped to our antenna architecture.
+        </p>
+
+        <image-component
+          tag="image"
+          source="assets/table2.png"
+          subtitle="Table 2: Demand and Wish Table">
+        </image-component>
+
+        <p>
+          The table below details the technical requirements based on the system and user needs.
+        </p>
+
+        <image-component
+          tag="image"
+          source="assets/table3.png"
+          subtitle="Table 3: Specifications &amp; performance of our shared-aperture, stacked-patch ESA in an 32x32 array">
+        </image-component>
+      </div>
+
+      <div id="sub-section-4-2">
+        <h3>4.2 Design Methodology</h3>
+        <h4 id="sub-section-4-2-1">4.2.1 Literature Review</h4>
+        <p>
+          The following subsections review the technical foundations that justify and realize the project’s choice of a shared-aperture, stacked-patch ESA.
+        </p>
+
+        <h4 id="sub-section-4-2-1-1">4.2.1.1 Shared-Aperture</h4>
+
+        <image-component
+          tag="image"
+          source="assets/figure5.png"
+          subtitle="Figure 7: (a) Tx/Rx separated aperture antennas, (b) Tx/Rx shared single aperture antenna<sup>[19]</sup>">
+        </image-component>
+
+        <p>
+          Shared-aperture antennas co-locate multiple functions (e.g., distinct bands or polarizations) within a single panel, eliminating separate arrays. This is highly attractive for platforms with constrained SWaP, like airborne, vehicular, and rooftop installations<sup>[20][21]</sup>. By reducing volume and mechanical complexity<sup>[20]</sup>, they meet the demand for compactness and multi-operator compatibility in terminals<sup>[22]</sup>. Successful implementations rely on isolation techniques to maintain high inter-band isolation and acceptable pattern control, thereby avoiding cross-band interference<sup>[21]</sup>.
+        </p>
+
+        <h4 id="sub-section-4-2-1-2">4.2.1.2 Stacked-Patch</h4>
+
+        <image-component
+          tag="image"
+          source="assets/figure6.png"
+          subtitle="Figure 8: Stacked-Patch ESA architecture (single unit/element)<sup>[23]</sup>">
+        </image-component>
+
+        <p>
+          Stacked-patch antennas use multiple radiating layers (driven and parasitic patches) separated by spacers primarily to increase impedance bandwidth, improve axial-ratio (AR) bandwidth for circular polarization, and elevate realized gain without significantly raising the profile<sup>[24][25][26][27]</sup>. Performance is boosted by multiple merging resonances<sup>[24]</sup>. Furthermore, using aperture coupling via slots provides superior feed-to-radiator isolation<sup>[24][25]</sup>, enabling robust, higher bandwidth operation, especially for Ku applications<sup>[28]</sup>. Our novel design stacks the Tx patches above the Rx, further decreasing the footprint by &gt;40% compared to separate-aperture architecture<sup>[3][8]</sup>.
+        </p>
+
+        <h4 id="sub-section-4-2-1-3">4.2.1.3 Circular Polarization (CP)</h4>
+        <p>
+          CP is widely used in satellite links because it mitigates Faraday rotation, orientation misalignment, and polarization mismatch between moving platforms/satellites<sup>[33]</sup>. For a stacked-patch geometry (Tx above Rx patches), opposite-sense CP (Left-Hand CP and Right-Hand CP) is required instead of linear polarization to ensure isolation and prevent cross-interference between the two paths<sup>[24][27]</sup>. CP in patch antennas can be realized through:
+        </p>
+
+        <h4>4.2.1.3.1 Single-Feed</h4>
+        <p>
+          From Figure 9(a), a square patch with truncated corners introduces perturbations that generate two closely spaced, equal-amplitude orthogonal modes<sup>[34]</sup>. A single offset feed achieves the necessary 90° phase difference, realizing CP with simpler hardware and reduced losses<sup>[34]</sup>, though at the expense of narrower bandwidth.
+        </p>
+
+        <image-component
+          tag="image"
+          source="assets/figure10.png"
+          subtitle="Figure 9: (a) Truncated square patch, (b) Feed offset to achieve LHCP, (c) Feed offset to achieve RHCP">
+        </image-component>
+
+        <h4>4.2.1.3.2 Dual-Feed</h4>
+
+        <image-component
+          tag="image"
+          source="assets/figure11.png"
+          subtitle="Figure 10: Dual feed (one in red, the other in green) orthogonal to each other to achieve CP<sup>[23]</sup>">
+        </image-component>
+
+        <p>
+          This method excites two orthogonal linear modes in the patch using dual feeds, separated by a 90° phase difference. It provides excellent CP purity and wider CP bandwidth but requires two feed networks and an external hybrid coupler, increasing complexity and feed loss<sup>[34]</sup>.
+        </p>
+
+        <h4 id="sub-section-4-2-1-4">4.2.1.4 Feed</h4>
+        <p>
+          Patch antennas require a feeding mechanism to deliver RF power effectively. The excitation method directly affects impedance matching, bandwidth, polarization, and fabrication complexity<sup>[35][36]</sup>. The feeding can be achieved through:
+        </p>
+
+        <h4>4.2.1.4.1 Contacting Methods</h4>
+
+        <image-component
+          tag="image"
+          source="assets/figure12.png"
+          subtitle="Figure 11: Coaxial probe (contacting) feed type">
+        </image-component>
+
+        <p>
+          A coaxial probe/inset feed that connects directly to the patch. This is simple and offers good impedance matching, but may cause spurious radiation, mechanical stress, and a narrow bandwidth<sup>[35]</sup>.
+        </p>
+
+        <h4>4.2.1.4.2 Non-Contacting Methods</h4>
+
+        <image-component
+          id="figure13"
+          tag="image"
+          source="assets/figure13.png"
+          subtitle="Figure 12: Aperture coupling (non-contacting) feed type">
+        </image-component>
+
+        <p>
+          This method uses aperture coupling, where a microstrip feedline beneath the ground plane couples energy to the patch via a slot. This isolates the feed from the radiating element, improving bandwidth, CP performance, and easier impedance/polarization control and integration with multilayer designs<sup>[24][35]</sup>, though more complex fabrication<sup>[36]</sup>.
+        </p>
+
+        <h4 id="sub-section-4-2-2">4.2.2 Competitor Analysis</h4>
+
+        <image-component
+          id="table3"
+          tag="image"
+          source="assets/table4.png"
+          subtitle="Table 4: Competitor Analysis Table<sup>[3]</sup><sup>[8]</sup><sup>[38[39]]</sup>">
+        </image-component>
+
+        <p>
+          From Table 4, our proposed ESA array design targets are aligned with real-world system requirements, and thus are ambitious relative to current commercial offerings. The inclusion of shared aperture, stacked-patch topology leading to low SWaP is the key differentiation, while still maintaining high commercial performance<sup>[3]</sup>.
+        </p>
+      </div>
+
+      <div id="sub-section-4-3">
+        <h3>4.3 Design Strategy</h3>
+        <p>
+          In summary, our design strategy focuses on developing a shared-aperture, stacked-patch ESA for Ku-band LEO terminals. By integrating dual-polarized (LHCP/RHCP) stacked patches, we aim to deliver a lightweight, low-profile, and vendor-agnostic solution suited for multi-operator, multi-constellation deployment.
+        </p>
+
+        <image-component
+          tag="image"
+          source="assets/table5.png"
+          subtitle="Table 5: Key pillars of our design strategy">
+        </image-component>
+      </div>
+    </div>
+
+    <sl-divider></sl-divider>
+
+    <!-- Section 5: Concept Design -->
+    <div id="section-header-5">
+      <h2>5. Concept Design</h2>
+    <div id="sub-section-5-1">
+      <h3>5.1 Concept Selection</h3>
+
+      <h4 id="sub-section-5-1-1">5.1.1 Morphological Chart</h4>
+      <p>
+        To systematically identify and compare possible designs, a morphological chart was constructed.
+      </p>
+
+      <image-component
+        tag="image"
+        source="assets/table6.png"
+        subtitle="Table 6: Morphological Chart">
+      </image-component>
+</div>
+      <h4 id="sub-section-5-1-2">5.1.2 Selection Criteria</h4>
+
+      <h4>5.1.2.1 Route A</h4>
+      <p>
+        Although simple and compact, this configuration suffers from limited impedance bandwidth (&lt;10%) due to probe inductance and increased dielectric loading at Ku-band frequencies<sup>[35]</sup>. The vertical probe also introduces unwanted asymmetry, leading to cross-polarization degradation<sup>[40]</sup>. Moreover, mechanical drilling of coaxial probes at mm-level accuracy complicates array fabrication and integration into planar PCBs<sup>[3]</sup>.
+      </p>
+
+      <h4>5.1.2.2 Route C</h4>
+      <p>
+        The dual-feed scheme allows better control of orthogonal modes and AR but at the cost of hybrid coupler, phase shifters, and longer feed lines<sup>[41][42]</sup>. These increase insertion loss and degrade radiation efficiency, especially in arrays<sup>[34]</sup>. The added complexity also contradicts manufacturability and cost-efficiency goals.
+      </p>
+
+      <h4>5.1.2.3 Route B (Chosen)</h4>
+      <p>
+        The truncated corner patch (TCP) with single offset feed is chosen due to lower insertion losses and reduced feed complexity<sup>[34]</sup>. Together with the stacked-patch structure, aperture coupling enables better isolation between the feed and radiating layers, allowing robust multilayer integration<sup>[3][43]</sup>. Moreover, aperture coupling offers wide impedance bandwidth, reduced spurious radiation, higher CP performance, and preserves the mechanical integrity of radiating patches<sup>[3][24]</sup>. This configuration also allows the use of blind vias (refer to <a href="#section5.2.2.2">section 5.2.2.2</a>) for improved impedance matching. Therefore, Route B presents the best balance between electrical and mechanical performance, impedance and AR bandwidths, polarization purity, manufacturability, and scalability for our ESA.
+      </p>
+
+      <h3 id="sub-section-5-2">5.2 Design Solution</h3>
+
+      <h4 id="sub-section-5-2-1">5.2.1 Stack Architecture</h4>
+
+      <h4 id="section5.2.2.1">5.2.1.1 Main Layers:</h4>
+      <p>
+        The proposed stacked geometry consists of multiple layers arranged vertically. In the order of top to bottom layer:
+      </p>
+
+      <image-component
+        tag="image"
+        source="assets/table7.png"
+        subtitle="Table 7: Main Layers of our ESA">
+      </image-component>
+
+      <image-component
+        tag="image"
+        source="assets/figure14.png"
+        subtitle="Figure 13: General configuration of our shared-aperture, stacked-patch ESA<sup>[48]</sup>">
+      </image-component>
+
+      <h4 id="section5.2.2.2">5.2.1.2 Additional Layers:</h4>
+      <p>
+        To optimize the performance, several structural enhancements/layers could be introduced into the stack:
+      </p>
+
+      <p><strong>1. Air Gap Layers</strong></p>
+
+      <image-component
+        tag="image"
+        source="assets/figure15.png"
+        subtitle="Figure 14: Air gap layer in a stacked-patch antenna<sup>[45]</sup>">
+      </image-component>
+
+      <p>
+        The air gap effectively lowers the effective dielectric constant (εeff) and reactive energy, and broadens Tx/Rx resonances, significantly improving impedance bandwidth (~25-35%)<sup>[46]</sup>. It also reduces mutual coupling for better isolation and minimizes surface-wave losses for higher efficiency and gain<sup>[47]</sup>. Its thickness must be tuned for optimization<sup>[47]</sup>.
+      </p>
+
+      <p><strong>2. Parasitic Patches</strong></p>
+
+      <image-component
+        tag="image"
+        source="assets/figure16.png"
+        subtitle="Figure 15: Bandwidth enhancement with parasitic patch coupled to the driven patch at 2 different resonant frequencies<sup>[48]</sup>">
+      </image-component>
+
+      <p>
+        The addition of coupled parasitic patch(es) forms a dual-resonant structure with closely spaced frequencies, which achieves a wide impedance bandwidth and a smoother reflection coefficient (S<sub>11</sub>)<sup>[48][49]</sup>. They redistribute current density, reduce surface-wave propagation and improve aperture efficiency<sup>[50]</sup>. Furthermore, it stabilizes CP performance<sup>[50]</sup>.
+      </p>
+
+      <p><strong>3. Via Fences</strong></p>
+      <p>
+        Via fences act as electromagnetic shields to prevent surface-wave leakage, significantly reducing cross-polar radiation and enhancing polarization purity<sup>[23][51]</sup>. They also reduce back radiation and parasitic modes, thus stabilizing the impedance response across frequency<sup>[51]</sup>.
+      </p>
+
+      <image-component
+        tag="image"
+        source="assets/figure17.png"
+        subtitle="Figure 16: Via loaded rings around patches 1 and 2<sup>[52]</sup>">
+      </image-component>
+
+      <h4 id="sub-section-5-2-2">5.2.2 Material Selection</h4>
+      <p>
+        Commercially, the material used for patches, feed, and ground plane is copper, while the dielectric substrate material must exhibit low dielectric loss, stable εr, and thermal consistency<sup>[3]</sup>. Commercial laminates need to be evaluated in terms of thickness, manufacturability, and cost to enable optimization and mechanical rigidity<sup>[3]</sup>.
+      </p>
+
+      <image-component
+        tag="image"
+        source="assets/figure18.png"
+        subtitle="Figure 17: Bandwidth trends relative to substrate permittivity and thickness<sup>[48]</sup>">
+      </image-component>
+      <image-component
+        tag="image"
+        source="assets/figure19.png"
+        subtitle="Figure 18: Product selector guide from vendor (Rogers Corporation)<sup>[53]</sup>">
+      </image-component>
+
+      <h4 id="sub-section-5-2-3">5.2.3 Dimensioning of Key Parameters</h4>
+
+      <h4>5.2.3.1 Patch</h4>
+      <p>
+        A square patch offers easy polarization control and stable radiation pattern symmetry<sup>[54]</sup>. It simplifies dual-band scaling<sup>[54]</sup>, and is standard PCB-compatible for easy fabrication and arraying<sup>[3]</sup>. Its well-studied mode structure (TM₁₀ and TM₀₁) also ensures highly predictable performance and modeling accuracy<sup>[3][54]</sup>.
+      </p>
+
+      <h4>5.2.3.1.1 Dimension</h4>
+       <image-component
+        tag="image"
+        source="assets/3equations.png"
+        subtitle="Figure 19: Patch Length Calculation Equations<sup>[56]</sup>"> "
+      </image-component>
+      <p>
+        For a square patch, the resonant length, L, is λ<sub>g</sub>/2<sup>[55]</sup>. Using the above 3 equations<sup>[56]</sup>, we can find the length of patches, given the choice of substrate (with respective εr). Given Tx patch is smaller than Rx (due to smaller λ<sub>0</sub>), it would be placed above in our stacked geometry<sup>[57]</sup>.
+      </p>
+
+      <h4>5.2.3.1.2 Corner Truncations</h4>
+
+      <image-component
+        tag="image"
+        source="assets/figure7a.png"
+        subtitle="Figure 9(a) Truncated Square Patch">
+      </image-component>
+
+      <p>
+        The truncation size (5-10% of patch length) is optimized to achieve a 90° phase difference and equal mode amplitude, ensuring CP generation<sup>[58]</sup>
+      </p>
+
+      <h4>5.2.3.2 Slot</h4>
+
+      <image-component
+        tag="image"
+        source="assets/figure20.png"
+        subtitle="Figure 20: Different slots geometry<sup>[48]</sup>">
+      </image-component>
+
+      <p>
+        Rectangular slots (Figures 20(a), (b), and (c)) provide simple coupling, while 'H' and bowtie slots (Figure 20(d) and (e)) offer stronger coupling due to their more uniform field magnitude<sup>[59]</sup>. Combining these 2 into the hourglass-shaped slot (Figure 2(f)) achieves the most uniform field distribution and strongest coupling<sup>[59]</sup>, which is a design we plan to test.
+      </p>
+
+      <h4>5.2.3.3 Feed</h4>
+      <p>
+        A straight microstrip feedline (refer to <a href="#figure13">Figure 12</a>) is chosen as the excitation mechanism for the patch, because it provides clean coupling, broad bandwidth, and structural simplicity<sup>[59]</sup>.
+      </p>
+
+      <h4>5.2.3.3.1 Feed offset</h4>
+
+      <image-component
+        tag="image"
+        source="assets/figure7bc.png"
+        subtitle="Figure 9(b) Feed offset to achieve LHCP, (c) Feed offset to achieve RHCP">
+      </image-component>
+
+      <p>
+        Feed offset refers to the lateral displacement of the microstrip feed from the patch’s centerline, controlling coupling strength and mode balance to generate CP. For square patches, the offset feed point is on the diagonal<sup>[60]</sup>.
+      </p>
+
+      <h4>5.2.3.3.2 Stub Length</h4>
+
+      <image-component
+        tag="image"
+        source="assets/figure21.png"
+        subtitle="Figure 21: Stub Length, 𝐿𝑜𝑐 measurement">
+      </image-component>
+
+      <p>
+        The stub length, 𝐿𝑜𝑐, is the distance between the slot’s center and the feed line’s open end. This section behaves as a reactive tuning stub<sup>[61]</sup>. Tuning 𝐿𝑜𝑐 allows impedance fine-tuning for resonance matching<sup>[61]</sup>.
+      </p>
+    </div>
+
+    <sl-divider></sl-divider>
+
+    <!-- Section 6: Prototype & Testing Plan -->
+    <div id="section-header-6">
+      <h2>6. Prototype &amp; Testing Plan</h2>
+
+      <p>
+        This project uses CST Studio Suite to design, optimize, and validate a stacked-patch antenna element, then scale it into a finite 32×32 array. The workflow is split into two stages:
+      </p>
+
+      <p>
+        1. Unit-cell simulation to finalize the element geometry and performance.
+      </p>
+
+      <p>
+        2. Finite 32x32 array simulation to evaluate array-level metrics.
+      </p>
+
+      <h3 id="sub-section-6-1">6.1 Prototype</h3>
+
+      <h4 id="sub-section-6-1-1">6.1.1 Unit-cell design and simulation</h4>
+
+      <h4>6.1.1.1 Geometry Creation and Layer Definition</h4>
+      <p>
+        Each layer from <a href="#section5.2.2.1">section 5.2.1.1</a> is individually defined and built on one another, with dimensions, materials, and thicknesses modelled based on commercial availability. Via fences, air gaps, and parasitic patches will also be modelled.
+      </p>
+
+      <image-component
+        tag="image"
+        source="assets/figure22.png"
+        subtitle="Figure 22: Defining dimension, thickness, and material of a dielectric layer on CST">
+      </image-component>
+
+      <h4>6.1.1.2 Boundary Conditions and Excitation Setup</h4>
+      <p>
+        Periodic Boundary Conditions (PBCs) are applied on the X- and Y-axes to mimic an infinite array, while the Z-axis uses Open boundaries to simulate free-space radiation.
+      </p>
+
+      <image-component
+        tag="image"
+        source="assets/figure23(a).png"
+        subtitle="Figure 23: Setting of Boundary Conditions">
+      </image-component>
+
+      <p>
+        The feed excitation is introduced through a waveguide port at the feedline input, matched to 50Ω.
+      </p>
+
+      <h4>6.1.1.3 Frequency Sweep and Parameter Tuning</h4>
+      <p>
+        A discrete frequency sweep is set up across 10-15GHz to cover both Rx and Tx bands.
+      </p>
+
+      <p>
+        Key geometric parameters (patch dimensions, layers’ thickness, slot geometry, feed offset, stub length, etc.) are parameterized within CST using the built-in Parameter Sweep Tool to fine-tune individual parameters and identify their optimal values, allowing us to understand how each physical modification influences antenna behavior.
+      </p>
+
+      <p>
+        After which, CST’s Optimizer module could perform a multi-variable optimization, tuning for the best trade-off between bandwidth, gain, and polarization performance.
+      </p>
+
+      <h4>6.1.1.4 Post-Processing and Field Visualization</h4>
+      <p>
+        Based on Table 8, the results are post-processed to analyze the unit cell’s performance.
+      </p>
+
+      <image-component
+        tag="image"
+        source="assets/table8.png"
+        subtitle="Table 8: Performance metrics of a unit cell">
+      </image-component>
+
+      <h4 id="sub-section-6-1-2">6.1.2 Finite Array Scaling</h4>
+      <p>
+        Array layout is then built using CST’s Array Task.
+      </p>
+
+      <h4>6.1.2.1. Array Geometry and Layout</h4>
+      <p>
+        Import the optimized single-element geometry and instantiate it as an 32×32 array with element spacing, d, to avoid grating lobes for the desired scan, θ_max, using the formula below<sup>[62]</sup>.
+      </p>
+      <image-component
+        tag="image"
+        source="assets/equ1.png"
+        subtitle="">
+      </image-component>
+      <h4>6.1.2.2 Boundary Conditions and Excitation Setup</h4>
+      <p>
+        Open boundary conditions are used on all axes. For the feed, excitations using phase-progressed ports are utilised to study beam steering and scan performance. Progressive phase shift is applied between columns/rows according to the desired scan angle, using the formula below<sup>[63]</sup>.
+      </p>
+      <image-component
+        tag="image"
+        source="assets/equ2.png"
+        subtitle="">
+      </image-component>
+      <h4>6.1.2.3 Frequency Sweep and Parameter Tuning</h4>
+      <p>
+        A discrete frequency sweep is set up across 10-15GHz to cover both Rx and Tx bands.
+      </p>
+
+      <p>
+        Element spacing, d, is varied and tuned to re-evaluate scan performance and grating lobe onset. Other key parameters can be tuned if needed as well.
+      </p>
+
+      <h4>6.1.2.4 Performance Metrics Evaluation</h4>
+      <p>
+        After optimization, the design is validated against the following performance metrics.
+      </p>
+
+      <image-component
+        tag="image"
+        source="assets/table9.png"
+        subtitle="Table 9: Performance Metrics of 32x32 array">
+      </image-component>
+
+      <h4>6.1.2.5 Optimization &amp; Verification</h4>
+      <p>
+        The final steps involve multi-objective optimization of the array (Gain, SLL, AR, SWaP) and a quantitative comparison between simulated and theoretical performance. We will validate the unit-cell against the finite array to quantify pattern pull and refine element geometry, ultimately establishing a validated simulation-to-hardware correlation framework for fabrication.
+      </p>
+
+      <h3 id="sub-section-6-2">6.2 Testing Plan</h3>
+      <p>
+        Following the prototyping setup, testing and simulation work in CST Studio Suite will be carried out to validate our design. The testing process will be divided into three stages:
+      </p>
+
+      <p>
+        1. Isolated element testing for Tx and Rx patches
+      </p>
+
+      <p>
+        2. Combined shared-aperture design
+      </p>
+
+      <p>
+        3. Array-level evaluation
+      </p>
+
+      <p>
+        The initial focus was to understand the fundamental radiation behavior of individual Tx and Rx stacked patches before integrating them into the shared-aperture configuration. This modular approach ensured that each band’s performance could be optimized independently, reducing complexity during full-stack development.
+      </p>
+
+      <h4 id="sub-section-6-2-1">6.2.1 Initial testing</h4>
+      <p>
+        At this stage, the testing emphasis was placed on developing physical intuition about how each geometrical parameter influences antenna performance, rather than achieving finalized specifications. The initial work primarily used the Tx stacked patch configuration as a learning and tuning reference.
+      </p>
+
+      <strong>Parameter Sweep Studies</strong>
+      <p>
+        CST’s Parameter Sweep Tool was used to investigate the effects of key design parameters on performance metrics (Refer to <a href="#appendixC">Appendix C</a> for detailed modelling procedures).
+      </p>
+
+      <image-component
+        tag="image"
+        source="assets/figure22.jpg"
+        subtitle="Figure 24: Thickness and material of each defining layer">
+      </image-component>
+
+      <image-component
+        tag="image"
+        source="assets/figure23.png"
+        subtitle="Figure 25: Dimension and layout of each defining layer">
+      </image-component>
+
+      <image-component
+        tag="image"
+        source="assets/figure24.png"
+        subtitle="Figure 26: Modelling on CST">
+      </image-component>
+
+      <image-component
+        tag="image"
+        source="assets/figure25.png"
+        subtitle="Figure 27: Modelling of microstrip feedline">
+      </image-component>
+
+      <image-component
+        tag="image"
+        source="assets/figure26(a).png"
+        subtitle="Figure 28: Modelling of slot on ground plane">
+      </image-component>
+
+      <image-component
+        tag="image"
+        source="assets/figure27(a).png"
+        subtitle="Figure 29: Modelling of patch">
+      </image-component>
+
+      <image-component
+        tag="image"
+        source="assets/figure28.png"
+        subtitle="Figure 30: Modelling of different layers">
+      </image-component>
+
+      <p>
+        Various tests were carried out, and the observations are recorded in Table 10 below. (Refer to <a href="#appendixD">Appendix D</a> for detailed results)
+      </p>
+
+      <image-component
+        tag="image"
+        source="assets/table10.png"
+        subtitle="Table 10: Test descriptions and the respective findings">
+      </image-component>
+
+      <p>
+        Figure 31 below shows the optimal values of the final design of the base model after parameter tunings. From Figure 32, the base model showed S<sub>11</sub>&lt;-10 dB across the Tx band.
+      </p>
+
+      <image-component
+        tag="image"
+        source="assets/figure29.png"
+        subtitle="Figure 31: Final design dimensions and layout">
+      </image-component>
+
+      <image-component
+        tag="image"
+        source="assets/figure30.png"
+        subtitle="Figure 32: S<sub>11</sub> plot of Tx base model">
+      </image-component>
+
+      <p>
+        Another test was carried out to verify LHCP generation as shown below.
+      </p>
+
+      <image-component
+        tag="image"
+        source="assets/figure31.png"
+        subtitle="Figure 33: Dimension and layout of each defining layer for LHCP verification test">
+      </image-component>
+
+      <image-component
+        tag="image"
+        source="assets/figure32.png"
+        subtitle="Figure 34: Modelling of Truncated Corner Patch (TCP) on CST">
+      </image-component>
+
+      <p>
+        The patch is truncated by 0.35mm, while the feed and slot are translated by 1.5mm left-off-centred. From Figures 35 and 36, the results verified that LHCP was generated, as the main lobe magnitude for left polarisation was much greater than that of right polarisation.
+      </p>
+
+      <image-component
+        tag="image"
+        source="assets/figure33.png"
+        subtitle="Figure 35: Realized Gain of Left Polarisation">
+      </image-component>
+
+      <image-component
+        tag="image"
+        source="assets/figure34.png"
+        subtitle="Figure 36: Realized Gain of Right Polarisation">
+      </image-component>
+
+      <p>
+        The last test involved the implementation of a parasitic patch to form a dual-resonant structure.
+      </p>
+
+      <image-component
+        tag="image"
+        source="assets/figure35.png"
+        subtitle="Figure 37:Thickness and material of each defining layer">
+      </image-component>
+
+      <image-component
+        tag="image"
+        source="assets/figure36.png"
+        subtitle="Figure 38: Dimension and layout of each defining layer">
+      </image-component>
+
+      <p>
+        After some slight tuning (refer to <a href="#appendixE">Appendix E</a>), the dual-resonant frequencies achieved were within the Tx-band, as shown in Figure 39.
+      </p>
+
+      <image-component
+        tag="image"
+        source="assets/figure37.png"
+        subtitle="Figure 39: S11 plot of Tx base model with parasitic patch">
+      </image-component>
+
+      <p>
+        While the model still requires optimization for better realized gain and CP purity, the key modal behaviors were verified. These insights will guide the next phase, which involves stacking the Tx and Rx patches together and scaling up to an array.
+      </p>
+    </div>
+
+    <sl-divider></sl-divider>
+
+    <!-- Section 7: Shortcomings -->
+    <div id="section-header-7">
+      <h2>7. Shortcomings</h2>
+      <p>
+        While substantial progress has been achieved in conceptual design and CST-based modeling, several key limitations are anticipated, as shown below.
+      </p>
+
+      <image-component
+        tag="image"
+        source="assets/table11.png"
+        subtitle="Table 11: Shortcomings and their respective resolutions">
+      </image-component>
+    </div>
+
+    <sl-divider></sl-divider>
+
+    <!-- Section 8: Future Work -->
+    <div id="section-header-8">
+      <h2>8. Future Work</h2>
+
+      <h3 id="sub-section-8-1">8.1 Project Timeline</h3>
+      <p>
+        Lastly, the figure below shows the project timeline moving forward. Our ultimate goal is to successfully manufacture the array and to validate its performance in an anechoic chamber.
+      </p>
+
+      <image-component
+        tag="image"
+        source="assets/figure38.png"
+        subtitle="Figure 40: Project Timeline">
+      </image-component>
+    </div>
+
+    <sl-divider></sl-divider>
+
+    <!-- Appendices -->
+<div id="appendices">
+  <h2>Appendices</h2>
+
+  <!-- Appendix A -->
+  <h3 id="appendixA">Appendix A</h3>
+  Additional Literature Review
+
+  <h4>4.2.1.5 Ku-Band Operation</h4>
+
+  <image-component
+    tag="image"
+    source="assets/figure39.png"
+    subtitle="Figure 41: World allocation of frequencies divided into 3 regions by the ITU<sup>[29]</sup>">
+  </image-component>
+
+  <image-component
+    tag="image"
+    source="assets/figure40.png"
+    subtitle="Figure 42: Allocation of 10.9~12.7 GHz by the ITU<sup>[29]</sup>">
+  </image-component>
+
+  <image-component
+    tag="image"
+    source="assets/figure41.png"
+    subtitle="Figure 43: Allocation of 14~14.5 GHz by the ITU<sup>[29]</sup>">
+  </image-component>
+
+  <p>
+    The Ku-band is strategically chosen for this project as it offers the optimal balance between antenna size, available bandwidth, and atmospheric performance<sup>[27]</sup>. Compared to lower bands like C-band, Ku-band allows for smaller antenna apertures and higher gain within the same physical footprint, reducing SWaP<sup>[30]</sup>. It also experiences less atmospheric and rain attenuation than higher bands like Ka-band, making it highly suitable for broadband LEO satellite communication systems where consistent link performance is critical<sup>[31]</sup>.
+  </p>
+
+  <p>
+    The selected frequency allocations for our antenna are Rx: 10.7-12.7GHz and Tx: 14.0-14.5GHz. From Figures 42 and 43, these ranges are globally harmonised by the ITU for mobile satellite applications and are widely adopted by major LEO operators like Starlink and OneWeb<sup>[32]</sup>. This standardisation ensures that our design remains interoperable and compliant across multiple regions and service providers, addressing the lack of cross-network compatibility<sup>[3]</sup>.
+  </p>
+
+  <h4>4.2.1.6 Dielectric Substrate</h4>
+  <p>
+    Dielectric substrate layers are used to house the patches and the feed. The substrate dielectric constant (ε<sub>r</sub>) and loss tangent (tan δ) affect guided wavelength, patch size, bandwidth, and radiation efficiency<sup>[37]</sup>. Low-ε<sub>r</sub>, low-loss laminates are commonly used in high-performance Ku antennas to maximise efficiency and reduce dielectric loading<sup>[3]</sup>. Other considerations include providing good manufacturability (blind via plating) at modestly higher loss<sup>[3]</sup>, a trade-off between performance (loss/bandwidth) and cost/manufacturability.
+  </p>
+
+  <h4>4.2.1.7 Impedance Bandwidth</h4>
+  <p>
+    Impedance bandwidth (frequency range where |S₁₁| ≤ −10 dB) is a primary performance metric for antenna usability across required bands. Stacked-patch and aperture-coupled topologies have been shown to achieve wide impedance bandwidths, frequently ~20-40% in range, when parasitic resonances and aperture geometry are optimally tuned<sup>[24][26]</sup>. Practical Ku-band designs can therefore meet the Tx (14.0~14.5 GHz) and Rx (10.7~12.7 GHz) (combined 30.2% bandwidth) requirements<sup>[26][27]</sup>, which require computational design and careful tuning of key geometries like air gaps, slot geometry, and parasitic layer dimensions.
+  </p>
+
+  <h4>4.2.1.8 AR Bandwidth</h4>
+  <p>
+    AR bandwidth (frequency range where AR ≤ 3 dB typically) defines the usable CP range critical for maintaining stable polarization alignment in dynamic LEO links<sup>[24]</sup>. Wide AR bandwidth ensures robust performance against polarization mismatch, Faraday rotation, and dynamic scan angles<sup>[27]</sup>. Stacked and aperture-coupled patches have been shown to significantly enhance AR bandwidth, often achieving 10-25% compared to &lt;3% for single-layer designs<sup>[25][28]</sup>.
+  </p>
+
+  <h4>4.2.1.9 Cross-Inteference</h4>
+  <p>
+    Cross interference arises from electromagnetic coupling between co-located Tx/Rx or dual-band sub-apertures, leading to signal degradation if not properly mitigated<sup>[20]</sup>. Techniques such as orthogonal polarization, frequency separation, via fencing, and feed isolation are proven to maintain a good (&gt;30 dB) isolation in shared-aperture ESA designs<sup>[21][27]</sup>.
+  </p>
+
+  <!-- Appendix B -->
+  <h3 id="appendixB">Appendix B</h3>
+  
+    Screenshots showing the early stage of liaising with PCB manufacturer (PCBWAY) to ensure manufacturability of layers.
+  
+
+  <!-- Put your PCBWAY screenshots here -->
+  <image-component
+    tag="image"
+    source="assets/figure42.png"
+    subtitle="">
+  </image-component>
+
+  <!-- Appendix C -->
+  <h3 id="appendixC">Appendix C</h3>
+  Modelling of parameters of base model (Figure 24)
+
+  <ol>
+    <li>
+      <strong>Material Selection</strong>
+    <ul>
+        <li>After liaising with the manufacturer, we have chosen our dielectric substrate to be RO4450B to house the patch and feed, with a thickness of 0.1mm. </li>
+        <li>Using the material selector guide, the εr of RO4450B is around 3.7.
+</li>
+          
       </ul>
-    </div>
+    </li>
+
+    <li>
+      <strong>Patch Size</strong>
+       <image-component
+        tag="image"
+        source="assets/3equations.png"
+        subtitle=""> "
+      </image-component>
+      <ul>
+        <li>Using centre frequencies for Tx (14.25GHz) and Rx (11.7GHz) as values of f:
+          λ<sub>0,Tx</sub> = 21.05mm, 
+          λ<sub>0,Rx</sub> = 25.64mm</li>
+      </ul>
+      
+      <ul>
+      <li>Given h = 0.1mm, W = L = λ<sub>g</sub>/2 = λ<sub>0</sub>/2&radic;εeff, solving: εeff = 3.574</li>
+      </ul>
+      <ul>
+      <li>Hence, solving: λ<sub>g,Tx</sub> = 11.134mm, λ<sub>g,Rx</sub> = 13.56mm</li>
+</ul>
+      <ul>
+      <li>Therefore, patch length, L, for Tx = 11.134/2 = 5.5mm, for Rx = 13.56/2 = 6.7mm</li>  
+      </ul>
+    </li>
+
+    <li>
+      <strong>Copper (Patch, Feed, Ground Plane) Thickness</strong>
+      <ul>
+        <li>Commercial Practice: 35μm<sup>[53]</sup></li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Feed and Patch Substrate Thickness</strong>
+      <ul>
+        <li>Usually 0.01λ to 0.02λ<sup>[24]</sup></li>
+        <li>Given λ<sub>g,Tx</sub> =  11.134mm, substrate thickness was chosen to be ~0.1mm</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Core Substrate Thickness</strong>
+      <ul>
+        <li>Commercially available in steps of 0.25 mm<sup>[53]</sup></li>
+        <li>0.51 mm is chosen as a starting point before sweeping tests</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Dimension of Slot</strong>
+      <ul>
+        <li>The ratio of slot length to width is typically 1/10<sup>[24]</sup></li>
+        <li>Sweeping of slot length and width is needed to determine the optimal dimensions<sup>[24]</sup></li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Dimension of Feed</strong>
+      <ul>
+        <li>Thinner feed lines couple more strongly to slot<sup>[24]</sup></li>
+        <li>Sweeping of feed width and stub length is needed to determine the optimal dimensions<sup>[24]</sup></li>
+      </ul>
+    </li>
+  </ol>
+
+  <!-- Appendix D -->
+  <h3 id="appendixD">Appendix D</h3>
+  Parameter Sweep Studies Test Results
+
+  
+  <image-component
+    tag="image"
+    source="assets/figure43.png"
+    subtitle="Patch Length Sweep">
+  </image-component>
+
+  <image-component
+    tag="image"
+    source="assets/figure44.png"
+    subtitle="Slot Length Sweep">
+  </image-component>
+
+  <image-component
+    tag="image"
+    source="assets/figure45.png"
+    subtitle="Stub Length Sweep">
+  </image-component>
+
+  <image-component
+    tag="image"
+    source="assets/figure46.png"
+    subtitle="Stub Length Sweep (Impedance Matching)">
+  </image-component>
+
+  <image-component
+    tag="image"
+    source="assets/figure47.png"
+    subtitle="Thickness of Core Substrate Sweep">
+  </image-component>
+
+  <image-component
+    tag="image"
+    source="assets/figure48.png"
+    subtitle="Feed Width Sweep">
+  </image-component>
+
+  <!-- Appendix E -->
+  <h3 id="appendixE">Appendix E</h3>
+  Parameter Tuning of Model with Parasitic Patch
+
+  <image-component
+    tag="image"
+    source="assets/figure49.png"
+    subtitle="Patch Length Sweep">
+  </image-component>
+
+  <image-component
+    tag="image"
+    source="assets/figure50.png"
+    subtitle="Stub Length Sweep">
+  </image-component>
+
+  <image-component
+    tag="image"
+    source="assets/figure51.png"
+    subtitle="Slot Length Sweep">
+  </image-component>
+
+  <!-- Appendix F -->
+  <h3 id="appendixF">Appendix F</h3>
+  Realized Gain and Radiation Pattern of Model with Parasitic Patch (Figure 37)
+
+  <image-component
+    tag="image"
+    source="assets/figure52.png"
+    subtitle="">
+  </image-component>
+
+  <!-- Appendix G -->
+  <h3 id="appendixG">Appendix G</h3>
+  Starlink Standard Kit Design
+
+  <image-component
+    tag="image"
+    source="assets/figure53.png"
+    subtitle="Starlink’s Design Integrating a ‘H-slot’ Aperture">
+  </image-component>
+
+  <image-component
+    tag="image"
+    source="assets/figure54.png"
+    subtitle="Starlink’s Array Tapering Design to Improve Scan Performance">
+  </image-component>
+
+  <!-- Appendix H -->
+  <h3 id="appendixH">Appendix H</h3>
+  Calculation of Element Spacing, d.
+
+  <image-component
+    tag="image"
+    source="assets/equ1.png"
+    subtitle="">
+  </image-component>
+
+  θ<sub>max</sub> = 53° (refer to <a href="#table3">Table 4</a>)
+<div>
+  From Appendix C: Patch Size Calculations:
+</div>
+  <ul>
+    <li>λ<sub>0,Tx</sub> = 21.05mm</li>
+    <li>λ<sub>0,Rx</sub> = 25.64mm</li>
+  </ul>
+
+  Using the greater λ<sub>0</sub> value (λ<sub>0,Rx</sub>), d = 14.26mm
+</div>
+
+    <!-- References -->
+    <div id="references" class="references">
+  <sl-divider></sl-divider>
+  <h2>References</h2>
+  <ul>
+    <li>[1] AnyWaves. (2024). LEO vs. GEO satellites: What’s the difference? <a href="https://anywaves.com/resources/blog/leo-meo-geo-satellites-definition-difference/" target="_blank" rel="noopener noreferrer">https://anywaves.com/resources/blog/leo-meo-geo-satellites-definition-difference/</a></li>
+    <li>[2] Iridium. (2018, September 11). Satellites 101: LEO vs. GEO. <a href="https://www.iridium.com/blog/satellites-101-leo-vs-geo-satellites/" target="_blank" rel="noopener noreferrer">https://www.iridium.com/blog/satellites-101-leo-vs-geo-satellites/</a></li>
+    <li>[3] Dave O. (2025). Senior Manager, ST Engineering, Advanced Networks &amp; Sensors.</li>
+    <li>[4] Wairah, M. (2023, January 25). Low Earth Orbit (LEO) satellite for Somalia. <a href="https://som-isoc.org/low-earth-orbit-leo-satellite-somalia/#:~:text=Unlike%20GEO%20satellites%2C%20LEOs%20are%20not%20fixed,of%20building%20very%20large%20numbers%20of%20terminals." target="_blank" rel="noopener noreferrer">https://som-isoc.org/low-earth-orbit-leo-satellite-somalia/#:~:text=Unlike%20GEO%20satellites%2C%20LEOs%20are%20not%20fixed,of%20building%20very%20large%20numbers%20of%20terminals.</a></li>
+    <li>[5] Fell, A. (2019, March 18). Evolution in user terminal design for broadband from space. <a href="https://www.ttp.com/insights/evolution-in-user-terminal-design-for-broadband-from-space#:~:text=New%20LEO%20satellite%20networks%20promise,approach%20and%20level%20of%20integration." target="_blank" rel="noopener noreferrer">https://www.ttp.com/insights/evolution-in-user-terminal-design-for-broadband-from-space#:~:text=New%20LEO%20satellite%20networks%20promise,approach%20and%20level%20of%20integration.</a></li>
+    <li>[6] SatCube. (2024). Choosing the right orbit – a GEO/LEO constellation guide. <a href="https://satcube.com/news/leo-geo-conjunction-guide" target="_blank" rel="noopener noreferrer">https://satcube.com/news/leo-geo-conjunction-guide</a></li>
+    <li>[7] Nguyen, J. (2025, January 24). Satellite World Briefing: The conversations that shaped 2024. Satellite World. <a href="https://satelliteworldtoday.com/satellite-world-briefing-the-conversations-that-shaped-2024/" target="_blank" rel="noopener noreferrer">https://satelliteworldtoday.com/satellite-world-briefing-the-conversations-that-shaped-2024/</a></li>
+    <li>[8] Alex C. (2025) Chief Executive Manager, Astrolynk Technologies Inc.</li>
+    <li>[9] Kumar, R., Roy, R., &amp; V.K., S. (2025, September 5). A Compact and Wide Beam Radiating Element for Electronically Steered Array Antenna.</li>
+    <li>[10] AST Networks. (2025, February 19). What are the differences between leo and geo satellites? <a href="https://ast-networks.com/insights/leo-connectivity/leo-and-geo-satellites/#:~:text=GEO%20satellites%20provide%20the%20backbone,actively%20track%20fast%20moving%20satellites." target="_blank" rel="noopener noreferrer">https://ast-networks.com/insights/leo-connectivity/leo-and-geo-satellites/#:~:text=GEO%20satellites%20provide%20the%20backbone,actively%20track%20fast%20moving%20satellites.</a></li>
+    <li>[11] Contrino, J. (2024, June 26). A constellation guide to geo/leo - how to choose the right orbit . Satellite World. <a href="https://satelliteworldtoday.com/a-constellation-guide-to-geo-leo-how-to-choose-the-right-orbit/#:~:text=If%20you%20are%20heading%20to,more%20info%20on%20GNSS%20signals)." target="_blank" rel="noopener noreferrer">https://satelliteworldtoday.com/a-constellation-guide-to-geo-leo-how-to-choose-the-right-orbit/#:~:text=If%20you%20are%20heading%20to,more%20info%20on%20GNSS%20signals).</a></li>
+    <li>[12] PEAKE. (2025, May 29). Above and beyond: Leo vs geo in public safety communications. <a href="https://www.peake.com/blog/above-and-beyond-leo-vs-geo-in-public-safety-communications#:~:text=Here%20are%20some%20key%20differences,ranging%20from%20500%2D600%20milliseconds." target="_blank" rel="noopener noreferrer">https://www.peake.com/blog/above-and-beyond-leo-vs-geo-in-public-safety-communications#:~:text=Here%20are%20some%20key%20differences,ranging%20from%20500%2D600%20milliseconds.</a></li>
+    <li>[13] Market Growth Reports. (2025, October 20). Satellite communication phased array antenna market size, share, growth, and industry analysis, by type (Singleband,Multiband), by application (commercial,military), regional insights and forecast to 2033. <a href="https://www.marketgrowthreports.com/market-reports/satellite-communication-phased-array-antenna-market-101948" target="_blank" rel="noopener noreferrer">https://www.marketgrowthreports.com/market-reports/satellite-communication-phased-array-antenna-market-101948</a></li>
+    <li>[14] Intelsat. (2025, April 2). ESA: Electronically Steered Array. <a href="https://www.intelsat.com/commercial-aviation/products/esa-ngso-ku-electronically-steered-antenna/" target="_blank" rel="noopener noreferrer">https://www.intelsat.com/commercial-aviation/products/esa-ngso-ku-electronically-steered-antenna/</a></li>
+    <li>[15] Agmon, E. (2024, February 13). Unlocking the Potential: A Guide to Electronically Steered Antennas.
+      <a href="https://www.microwavejournal.com/articles/41453-unlocking-the-potential-a-guide-to-electronically-steered-antennas#:~:text=Unlike%20traditional%20dish%20antennas%2C%20ESAs,power%20consumption%20and%20heat%20dissipation." target="_blank" rel="noopener noreferrer">https://www.microwavejournal.com/articles/41453-unlocking-the-potential-a-guide-to-electronically-steered-antennas#:~:text=Unlike%20traditional%20dish%20antennas%2C%20ESAs,power%20consumption%20and%20heat%20dissipation.</a></li>
+    <li>[16] Xie, M., Wei, X., Tang, Y., &amp; Hu, D. (2021, December 24). A Robust Design for Aperture-Level Simultaneous Transmit and Receive with Digital Phased Array. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8747313/#:~:text=However%2C%20the%20implementation%20of%20STAR,channel%20estimation%2C%20and%20fingerprint%20signals." target="_blank" rel="noopener noreferrer">https://pmc.ncbi.nlm.nih.gov/articles/PMC8747313/#:~:text=However%2C%20the%20implementation%20of%20STAR,channel%20estimation%2C%20and%20fingerprint%20signals.</a></li>
+    <li>[17] YTTEK Technology (2025). Why do leo satellite antennas utilize circular polarization? <a href="https://yttek.com/why-do-leo-satellite-antennas-utilize-circular-polarization/#:~:text=Reduce%20Polarization%20Loss:%20In%20LEO,for%20LEO%20satellite%20communication%20R&amp;D." target="_blank" rel="noopener noreferrer">https://yttek.com/why-do-leo-satellite-antennas-utilize-circular-polarization/#:~:text=Reduce%20Polarization%20Loss:%20In%20LEO,for%20LEO%20satellite%20communication%20R&amp;D.</a></li>
+    <li>[18]  YTTEK Technology (2024). Overcoming challenges and embracing innovations in the leo satellite era. <a href="https://yttek.com/overcoming-challenges-and-embracing-innovations-in-the-leo-satellite-era-ytteks-support-and-solutions/#:~:text=Standardized%20Communication%20Protocols,synchronous%20satellites%20currently%20in%20orbit." target="_blank" rel="noopener noreferrer">https://yttek.com/overcoming-challenges-and-embracing-innovations-in-the-leo-satellite-era-ytteks-support-and-solutions/#:~:text=Standardized%20Communication%20Protocols,synchronous%20satellites%20currently%20in%20orbit.</a></li>
+    <li>[19] Lu, J., Shao, Z., &amp; Li, C. (2022, July). A Portable 5.8 GHz Dual Circularly Polarized Interferometric Radar Sensor for Short-Range Motion Sensing. <a href="https://ieeexplore.ieee.org/document/9686642" target="_blank" rel="noopener noreferrer">https://ieeexplore.ieee.org/document/9686642</a></li>
+    <li>[20] Chen, Q., Cheng, Y.-F., Shao, C.-H., Feng, J., Liao, C., &amp; Ding, X. (2023, July 19). A high-gain dual-band shared-aperture array integrating zero-order-resonance patch and higher-order Metasurface antenna. Nature News. <a href="https://www.nature.com/articles/s41598-023-38562-3" target="_blank" rel="noopener noreferrer">https://www.nature.com/articles/s41598-023-38562-3</a></li>
+    <li>[21] Zhang, Y., Wang, D.-J., Wu, C., Cai, Q.-M., Zhang, R.-R., Li, R.-Q., Gao, P., &amp; Zhao, Y.-W. (2024, December). Dual-band and high-isolation shared-aperture antenna for broadband airborne applications. <a href="https://www.sciencedirect.com/science/article/pii/S1674862X24000569" target="_blank" rel="noopener noreferrer">https://www.sciencedirect.com/science/article/pii/S1674862X24000569</a></li>
+    <li>[22] G, A., D, C., T, C., N, D., G, G., M, M.-R., E, M., O, Q.-T., V, V., N.J.G., F., &amp; M, E. (2023). Low-Earth Orbit User Segment in the Ku and Ka-Band. <a href="https://pure.hw.ac.uk/ws/portalfiles/portal/84377760/LEO_user_terminal_review_final.pdf" target="_blank" rel="noopener noreferrer">https://pure.hw.ac.uk/ws/portalfiles/portal/84377760/LEO_user_terminal_review_final.pdf</a></li>
+    <li>[23] Huang, Y., Zhang, J., Li, X., Qi, Z, Lu, F., Jiang, H., Xue, X., Zhu, H., &amp; Guo, X. (2025, June 26). A low-profile dual-polarized high-gain low cross-polarization phased array for ku-band Satellite Communications. MDPI. <a href="https://www.mdpi.com/1424-8220/25/13/3986" target="_blank" rel="noopener noreferrer">https://www.mdpi.com/1424-8220/25/13/3986</a></li>
+    <li>[24] David M., P. (1996, May). A Review of Aperture Coupled Microstrip Antennas: History, Operation, Development, and Applications. <a href="https://people.umass.edu/dpozar/miscfiles/aperture.pdf" target="_blank" rel="noopener noreferrer">https://people.umass.edu/dpozar/miscfiles/aperture.pdf</a></li>
+    <li>[25] Jiang, H., &amp; Cho, K. (2006). Novel Broadband Aperture-Coupled Patch Antenna Using Bow-Tie Shaped Slot. <a href="https://www.ieice.org/~isap/ISAP_Archives/2006/pdf/3D2a-4.pdf" target="_blank" rel="noopener noreferrer">https://www.ieice.org/~isap/ISAP_Archives/2006/pdf/3D2a-4.pdf</a></li>
+    <li>[26] Sainkar, S., &amp; Jeyakumar, A. (n.d.). Analysis of Circularly Polarised Compact Microstrip Antenna For Broadband applications- a Review. <a href="https://svv-research-data.s3.ap-south-1.amazonaws.com/160659-National%20conference.pdf" target="_blank" rel="noopener noreferrer">https://svv-research-data.s3.ap-south-1.amazonaws.com/160659-National%20conference.pdf</a></li>
+    <li>[27] Gurbet, Y. S., &amp; Doğu, S. (2025, June 17). Comprehensive Review of Ku, K, and Ka Band Antenna Designs: Applications in CubeSats. <a href="https://link.springer.com/article/10.1007/s42405-025-00989-5" target="_blank" rel="noopener noreferrer">https://link.springer.com/article/10.1007/s42405-025-00989-5</a></li>
+    <li>[28] Shakeeb, M. (2010, December). Circularly Polarized Microstrip Antenna. <a href="https://spectrum.library.concordia.ca/id/eprint/7119/1/Shakeeb_MASc_S2011.pdf" target="_blank" rel="noopener noreferrer">https://spectrum.library.concordia.ca/id/eprint/7119/1/Shakeeb_MASc_S2011.pdf</a></li>
+    <li>[29] ITU RR5 Frequency Allocations (2025)</li>
+    <li>[30] Antesky. Full Guide to Satellite Communication Auto-pointing Antenna Terminals: Ku, C, or X – Which Band is the Best Choice? <a href="https://antesky.com/full-guide-to-satellite-communication-auto-pointing-antenna-terminals-ku-c-or-x-which-band-is-the-best-choice/" target="_blank" rel="noopener noreferrer">https://antesky.com/full-guide-to-satellite-communication-auto-pointing-antenna-terminals-ku-c-or-x-which-band-is-the-best-choice/</a></li>
+    <li>[31] Get SAT. (2022, April 30). Ka-Band vs. Ku-Band: Everything you need to know. <a href="https://www.getsat.com/knowledge-base/ku-band-vs-ka-band/" target="_blank" rel="noopener noreferrer">https://www.getsat.com/knowledge-base/ku-band-vs-ka-band/</a></li>
+    <li>[32] Katsiak, A. (2025, August). Fostering connectivity: The leo satellite opportunities in APEC. <a href="https://accesspartnership.com/wp-content/uploads/2025/09/Fostering-Connectivity-The-LEO-Satellite-Opportunities-in-APEC.pdf" target="_blank" rel="noopener noreferrer">https://accesspartnership.com/wp-content/uploads/2025/09/Fostering-Connectivity-The-LEO-Satellite-Opportunities-in-APEC.pdf</a></li>
+    <li>[33] Banerjee, U., Karmakar, A., &amp; Saha, A. (2020, April). A review on circularly polarized antennas, trends and advances | request PDF. <a href="https://www.researchgate.net/publication/340715145_A_review_on_circularly_polarized_antennas_trends_and_advances" target="_blank" rel="noopener noreferrer">https://www.researchgate.net/publication/340715145_A_review_on_circularly_polarized_antennas_trends_and_advances</a></li>
+    <li>[34] Sahal, M., &amp; Tiwari, V. N. (n.d.). Review of Circular Polarization Techniques for Design of Microstrip Patch Antenna. <a href="https://www.researchgate.net/publication/301720832_Review_of_Circular_Polarization_Techniques_for_Design_of_Microstrip_Patch_Antenna" target="_blank" rel="noopener noreferrer">https://www.researchgate.net/publication/301720832_Review_of_Circular_Polarization_Techniques_for_Design_of_Microstrip_Patch_Antenna</a></li>
+    <li>[35] Ahmed Saadi, M., &amp; Seker, C. (2022, June 13). Overview on Feeding Techniques of Microstrip Patch Antenna. <a href="https://www.jomcom.org/index.php/1/article/view/37/16" target="_blank" rel="noopener noreferrer">https://www.jomcom.org/index.php/1/article/view/37/16</a></li>
+    <li>[36] Mohammed, A. S., Yauri, A. R., &amp; Kabir, A. M. (2019, June). Review of Feeding Techniques for Microstrip Patch Antenna. <a href="https://www.ijcaonline.org/archives/volume178/number27/30709-2019919010/" target="_blank" rel="noopener noreferrer">https://www.ijcaonline.org/archives/volume178/number27/30709-2019919010/</a></li>
+    <li>[37] W Salman, J., Ameen, M. M., &amp; Hasan, S. (2006, March). Effects of the Loss Tangent, Dielectric Substrate Permittivity and Thickness on the Performance of Circular Microstrip Antennas. <a href="https://www.researchgate.net/publication/359364093_Effects_of_the_Loss_Tangent_Dielectric_Substrate_Permittivity_and_Thickness_on_the_Performance_of_Circular_Microstrip_Antennas" target="_blank" rel="noopener noreferrer">https://www.researchgate.net/publication/359364093_Effects_of_the_Loss_Tangent_Dielectric_Substrate_Permittivity_and_Thickness_on_the_Performance_of_Circular_Microstrip_Antennas</a></li>
+    <li>[38] KYMETA. Kymeta-U8-antenna-Terminal. <a href="https://profentech.com/wp-content/uploads/Kymeta-U8-Antenna-Terminal.pdf" target="_blank" rel="noopener noreferrer">https://profentech.com/wp-content/uploads/Kymeta-U8-Antenna-Terminal.pdf</a></li>
+    <li>[39] SpaceX. Starlink Standard Kit. <a href="https://starlink.com/specifications?srsltid=AfmBOormd04Ez9k1KfZhWaYCWP7W9LAf5f06ds4T6s5BAWc7vzFGSMMb" target="_blank" rel="noopener noreferrer">https://starlink.com/specifications?srsltid=AfmBOormd04Ez9k1KfZhWaYCWP7W9LAf5f06ds4T6s5BAWc7vzFGSMMb</a></li>
+    <li>[40] Kumar, C., &amp; Guha, D. (2012, January). Nature of Cross-Polarized Radiations from Probe-Fed Circular Microstrip Antennas and Their Suppression Using Different Geometries of Defected Ground Structure (DGS). <a href="https://www.researchgate.net/publication/332541914_Circularly_Polarized_Rectangular_Microstrip_Patch_Antenna_with_Finite_Ground_Plane" target="_blank" rel="noopener noreferrer">https://www.researchgate.net/publication/332541914_Circularly_Polarized_Rectangular_Microstrip_Patch_Antenna_with_Finite_Ground_Plane</a></li>
+    <li>[41] Sim, C.-Y.-D., Chang, C.-C., &amp; Row, J.-S. (2009, November). Dual-Feed Dual-Polarized Patch Antenna With Low Cross Polarization and High Isolation. <a href="https://ieeexplore.ieee.org/document/5175453/" target="_blank" rel="noopener noreferrer">https://ieeexplore.ieee.org/document/5175453/</a></li>
+    <li>[42] Abdulateef, A., Kamal Abdul Rahim, S., Soh, P. J., Hashim Dahri, M., Eteng, A., &amp; Zeain, M. Y. (2021, June). A review of hybrid couplers: State-of-the-art, applications, design issues and challenges. <a href="https://www.researchgate.net/publication/352457227_A_review_of_hybrid_couplers_State-of-the-art_applications_design_issues_and_challenges" target="_blank" rel="noopener noreferrer">https://www.researchgate.net/publication/352457227_A_review_of_hybrid_couplers_State-of-the-art_applications_design_issues_and_challenges</a></li>
+    <li>[43] Civerolo, M., &amp; Arakaki, D. (n.d.). Aperture Coupled Patch Antenna Design Methods . <a href="https://digitalcommons.calpoly.edu/cgi/viewcontent.cgi?article=1275&amp;context=eeng_fac" target="_blank" rel="noopener noreferrer">https://digitalcommons.calpoly.edu/cgi/viewcontent.cgi?article=1275&amp;context=eeng_fac</a></li>
+    <li>[44] Mezaal, Y. S., &amp; Eyyuboglu, H. T. (2016, April 7). Investigation of New Microstrip Bandpass Filter Based on Patch Resonator with Geometrical Fractal Slot. <a href="https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0152615#:~:text=A%20compact%20dual%2Dmode%20microstrip,of%20perturbation%20dimension%20%28d%29." target="_blank" rel="noopener noreferrer">https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0152615#:~:text=A%20compact%20dual%2Dmode%20microstrip,of%20perturbation%20dimension%20%28d%29.</a></li>
+    <li>[45] Mao, Y., Padooru, Y. R., Lee, K., A., E., &amp; Fan, Y. (2011, July 3). Air Gap tuning of Patch Antenna Resonance | IEEE Conference Publication | IEEE Xplore. <a href="https://ieeexplore.ieee.org/document/5997184" target="_blank" rel="noopener noreferrer">https://ieeexplore.ieee.org/document/5997184</a></li>
+    <li>[46] Garg, R., Bhartia, P., Bahl, I., &amp; Ittipiboon, A. (n.d.). Microstrip Antenna Design Handbook. <a href="https://uodiyala.edu.iq/uploads/PDF%20ELIBRARY%20UODIYALA/EL37/Microstrip%20Antenna%20Design%20Handbook.pdf" target="_blank" rel="noopener noreferrer">https://uodiyala.edu.iq/uploads/PDF%20ELIBRARY%20UODIYALA/EL37/Microstrip%20Antenna%20Design%20Handbook.pdf</a></li>
+    <li>[47] Al Kharusi, K. W. S., Ramli, N., Khan, S., Ali, M. T., &amp; Abdul Halim, M. H. (2020, May). Gain Enhancement of Rectangular Microstrip Patch Antenna using Air Gap at 2.4 GHz. <a href="https://www.researchgate.net/publication/344541003_Gain_Enhancement_of_Rectangular_Microstrip_Patch_Antenna_using_Air_Gap_at_24_GHz" target="_blank" rel="noopener noreferrer">https://www.researchgate.net/publication/344541003_Gain_Enhancement_of_Rectangular_Microstrip_Patch_Antenna_using_Air_Gap_at_24_GHz</a></li>
+    <li>[48] Parizi, S. A. R. (2017a, November 15). Bandwidth Enhancement Techniques. <a href="https://www.intechopen.com/chapters/57320" target="_blank" rel="noopener noreferrer">https://www.intechopen.com/chapters/57320</a></li>
+    <li>[49] Oraizi, H., &amp; Hamidkhani, M. (2010, October). Wide-band microstrip patch antennas using parasitic elements and defected ground structures on different substrates. <a href="https://ieeexplore.ieee.org/document/5724179" target="_blank" rel="noopener noreferrer">https://ieeexplore.ieee.org/document/5724179</a></li>
+    <li>[50] Lin, J.-F., &amp; Chu, Q.-X. (2018, April). Enhancing Bandwidth of CP Microstrip Antenna by Using Parasitic Patches in Annular Sector Shapes to Control Electric Field Components. <a href="https://ieeexplore.ieee.org/document/8334616/" target="_blank" rel="noopener noreferrer">https://ieeexplore.ieee.org/document/8334616/</a></li>
+    <li>[51] Minz, L., &amp; Park, S.-O. (2020, February). Beam scanning annular slot‐ring antenna array with via‐fence for wireless power transfer. <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/mmce.22178" target="_blank" rel="noopener noreferrer">https://onlinelibrary.wiley.com/doi/full/10.1002/mmce.22178</a></li>
+    <li>[52] Bhutani, A., Gulan, H., Goettel, B., Heine, C., Thelemann, T., Pauli, M., &amp; Zwick, T. (2016, April). 122 GHz aperture-coupled stacked patch microstrip antenna in LTCC technology. <a href="https://ieeexplore.ieee.org/abstract/document/7481147/" target="_blank" rel="noopener noreferrer">https://ieeexplore.ieee.org/abstract/document/7481147/</a></li>
+    <li>[53] Rogers Corporation. High Frequency Electronics Product Selector Guide. <a href="https://www.rogerscorp.com/-/media/project/rogerscorp/documents/advanced-electronics-solutions/english/product-selection-guides/high-frequency-electronics-product-selector-guide.pdf" target="_blank" rel="noopener noreferrer">https://www.rogerscorp.com/-/media/project/rogerscorp/documents/advanced-electronics-solutions/english/product-selection-guides/high-frequency-electronics-product-selector-guide.pdf</a></li>
+    <li>[54] O. Nwajana, A., &amp; Yeo, K. S. K. (2013). A novel microstrip dual-band Bandpass filter using dual-mode square patch resonators. <a href="https://www.academia.edu/18197576/A_Novel_Microstrip_Dual_band_Bandpass_Filter_Using_Dual_Mode_Square_Patch_Resonators" target="_blank" rel="noopener noreferrer">https://www.academia.edu/18197576/A_Novel_Microstrip_Dual_band_Bandpass_Filter_Using_Dual_Mode_Square_Patch_Resonators</a></li>
+    <li>[55] Khlf Ahmed, R., &amp; H. Ali, I. (2017, June). SAUSAGE MINKOWSKI SQUARE PATCH ANTENNA FOR GPS APPLICATION. <a href="https://www.ijaet.org/media/1I39-IJAET1003307-v10-i4-pp285-293.pdf" target="_blank" rel="noopener noreferrer">https://www.ijaet.org/media/1I39-IJAET1003307-v10-i4-pp285-293.pdf</a></li>
+    <li>[56] Microstrip Wavelength Calculator - engineering calculators &amp; tools. (n.d.-f). <a href="https://www.allaboutcircuits.com/tools/microstrip-wavelength-calculator/" target="_blank" rel="noopener noreferrer">https://www.allaboutcircuits.com/tools/microstrip-wavelength-calculator/</a></li>
+    <li>[57] Orban, D., &amp; Moernaut, G. J. K. (2009, September 29). The Basics of Patch Antennas, Updated. <a href="https://dl.icdst.org/pdfs/files4/db219cf41828c37270c891739c9f4710.pdf" target="_blank" rel="noopener noreferrer">https://dl.icdst.org/pdfs/files4/db219cf41828c37270c891739c9f4710.pdf</a></li>
+    <li>[58] Keshwala, U., Rawat, S., &amp; Ray, K. (2021, January 6). Circularly polarized truncated corner square slot antenna for Ku-band applications. <a href="https://scientiairanica.sharif.edu/article_22363_524b059c996e1951d1ad0b431f074c08.pdf" target="_blank" rel="noopener noreferrer">https://scientiairanica.sharif.edu/article_22363_524b059c996e1951d1ad0b431f074c08.pdf</a></li>
+    <li>[59] V, R., K, P., Devakirubai D, G., C, A., &amp; P, S. (2012, February). Design and Comparative Study of Pin feed and Line feed Microstrip Patch Antenna for X-band Applications. <a href="https://scispace.com/pdf/design-and-comparative-study-of-pin-feed-and-line-feed-3r452s7l7y.pdf" target="_blank" rel="noopener noreferrer">https://scispace.com/pdf/design-and-comparative-study-of-pin-feed-and-line-feed-3r452s7l7y.pdf</a></li>
+    <li>[60] Lee,  s. k., A., S., E., K., Loh, S. F., Ooi, S. F., &amp; Qin, Y. (2005, January 7). A Design Procedure for a Circular Polarized, Nearly Square Patch Antenna. <a href="https://www.microwavejournal.com/articles/935-a-design-procedure-for-a-circular-polarized-nearly-square-patch-antenna" target="_blank" rel="noopener noreferrer">https://www.microwavejournal.com/articles/935-a-design-procedure-for-a-circular-polarized-nearly-square-patch-antenna</a></li>
+    <li>[61] Kimouche, H., Abed, D., &amp; Atrouz, B. (2010, May). Small size microstrip slot antennas for Ultra-Wide Band communications. <a href="https://www.researchgate.net/publication/224154197_Small_size_microstrip_slot_antennas_for_Ultra-Wide_Band_communications" target="_blank" rel="noopener noreferrer">https://www.researchgate.net/publication/224154197_Small_size_microstrip_slot_antennas_for_Ultra-Wide_Band_communications</a></li>
+    <li>[62] Bob, B., Peter, D., &amp; Jon, K. (n.d.). Phased array antenna patterns-part 2: Grating lobes and beam squint. Analog Devices. <a href="https://www.analog.com/en/resources/analog-dialogue/articles/phased-array-antenna-patterns-part2.html#:~:text=But%20in%20practice%2C%20the%20maximum,/2%20(90%C2%B0)." target="_blank" rel="noopener noreferrer">https://www.analog.com/en/resources/analog-dialogue/articles/phased-array-antenna-patterns-part2.html#:~:text=But%20in%20practice%2C%20the%20maximum,/2%20(90%C2%B0).</a></li>
+    <li>[63] Robert R. , R. (n.d.). NASA. <a href="https://ntrs.nasa.gov/api/citations/20180006420/downloads/20180006420.pdf?attachment=true" target="_blank" rel="noopener noreferrer">https://ntrs.nasa.gov/api/citations/20180006420/downloads/20180006420.pdf?attachment=true</a></li>
+  </ul>
+</div>
+
+
+    <!-- Scroll to top -->
+    <sl-button class="scroll-to-top" variant="primary" size="medium" circle onclick="scrollToTop()">
+      <sl-icon name="arrow-up" label="Scroll to top"></sl-icon>
+    </sl-button>
+
+    <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
   </div>
-
-  <!-- This is the code to display the scroll to top button for ergonomic -->
-  <!-- You can leave it as it is, or if you don't like its aesthetics you can also just delete it, -->
-  <!-- but it might reduce the user experience. -->
-  <sl-button class="scroll-to-top" variant="primary" size="medium" circle onclick="scrollToTop()">
-    <sl-icon name="arrow-up" label="Settings"></sl-icon>
-  </sl-button>
-
-  <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
-  <script type="module" src="./components/table-component/table-component.js"></script>
 </body>
 
 </html>
