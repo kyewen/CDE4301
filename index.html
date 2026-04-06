@@ -143,37 +143,60 @@
 
     <!-- 6 -->
     <sl-tree-item expanded>
-      <a href="#section-header-6">6. Prototype &amp; Testing Plan</a>
+      <a href="#section-header-6">6. Prototype &amp; Testing</a>
 
       <sl-tree-item expanded><a href="#sub-section-6-1">6.1 Prototype</a>
 
       <sl-tree-item>
-        <a href="#sub-section-6-1-1">6.1.1 Unit-cell design and simulation</a>
+        <a href="#sub-section-6-1-1">6.1.1 Unit-cell Design and Simulation</a>
       </sl-tree-item>
 
       <sl-tree-item>
-        <a href="#sub-section-6-1-2">6.1.2 Finite Array Scaling</a>
+        <a href="#sub-section-6-1-2">6.1.2 Finite Array Design and Simulation</a>
 
       </sl-tree-item>
       </sl-tree-item>
 
       <sl-tree-item expanded>
-        <a href="#sub-section-6-2">6.2 Testing Plan</a>
-        <sl-tree-item><a href="#sub-section-6-2-1">6.2.1 Initial testing</a></sl-tree-item>
+        <a href="#sub-section-6-2">6.2 Testing</a>
+      <sl-tree-item>
+        <a href="#sub-section-6-2-1">6.2.1 Fabrication of Array</a>
+      </sl-tree-item>
+
+      <sl-tree-item>
+        <a href="#sub-section-6-2-2">6.2.2 Testing of Array</a>
+
+      </sl-tree-item>
+      <sl-tree-item>
+        <a href="#sub-section-6-2-3">6.2.3 Test Results</a>
+
+      </sl-tree-item>
       </sl-tree-item>
     </sl-tree-item>
 
     <!-- 7 -->
-    <sl-tree-item>
-      <a href="#section-header-7">7. Shortcomings</a>
+    <sl-tree-item expanded>
+      <a href="#section-header-7">7. Analysis</a>
+          <sl-tree-item expanded><a href="#sub-section-7-1">7.1 Simulaton vs Fabricated 2x2 Subarray</a>
+      </sl-tree-item>
+
+      <sl-tree-item expanded>
+        <a href="#sub-section-7-2">7.2  Scaling Projections for 32x32 Array Architecture</a>
+    </sl-tree-item>
     </sl-tree-item>
 
     <!-- 8 -->
-    <sl-tree-item>
-      <a href="#section-header-8">8. Future Work</a>
-
-      <sl-tree-item><a href="#sub-section-8-1">8.1 Project Timeline</a></sl-tree-item>
+    <sl-tree-item expanded>
+      <a href="#section-header-8">8. Shortcomings and Future Work</a>
     </sl-tree-item>
+
+    <!-- 9 -->
+    <sl-tree-item expanded>
+      <a href="#section-header-9">9. Conclusion</a>
+    </sl-tree-item>
+
+      <!-- <sl-tree-item><a href="#sub-section-8-1">8.1 Project Timeline</a></sl-tree-item>
+    </sl-tree-item> -->
 
     <!-- Appendices -->
     <sl-tree-item expanded>
@@ -185,8 +208,8 @@
       <sl-tree-item><a href="#appendixD">Appendix D</a></sl-tree-item>
       <sl-tree-item><a href="#appendixE">Appendix E</a></sl-tree-item>
       <sl-tree-item><a href="#appendixF">Appendix F</a></sl-tree-item>
-      <sl-tree-item><a href="#appendixG">Appendix G</a></sl-tree-item>
-      <sl-tree-item><a href="#appendixH">Appendix H</a></sl-tree-item>
+      <!-- <sl-tree-item><a href="#appendixG">Appendix G</a></sl-tree-item>
+      <sl-tree-item><a href="#appendixH">Appendix H</a></sl-tree-item> -->
     </sl-tree-item>
 
     <!-- References -->
@@ -204,15 +227,16 @@
       <h2>1. Introduction</h2>
 
       <p>
-        Geostationary Earth Orbit (GEO) satellites operate at ~35,786km above Earth’s equator, appearing fixed relative to the ground. This allows the use of fixed, non-tracking ground antennas<sup>[1]</sup>, simplifying infrastructure and reducing cost<sup>[2]</sup>. Furthermore, they utilize standardized modems and protocols<sup>[3]</sup>.
+        Geostationary Earth Orbit (GEO) satellites operate at ~35,786km above Earth’s equator, appearing fixed relative to the ground. This allows the use of fixed, non-tracking ground antennas<sup>[1]</sup>, simplifying infrastructure<sup>[2]</sup>. 
       </p>
 
       <p>
-        Low Earth Orbit (LEO) satellites operate much closer to Earth (~160-2,000km) and travel rapidly (~90-120minutes/orbit)<sup>[1]</sup>, enabling high-throughput and low-latency services<sup>[2]</sup>. As a result, ground terminals face challenges like frequent hand-overs, rapidly varying geometry, Doppler effects, and tracking needs<sup>[5]</sup>. Many contemporary LEO operators adopt proprietary protocols, increasing interoperability barriers, vendor lock-in, and raising system complexity<sup>[3][5]</sup>. Moreover, the growth of LEO constellations is projected to reach tens of thousands in the coming decade to deliver global coverage<sup>[6]</sup>, thus pushing demand for low-complexity, mass-manufacturable user terminals<sup>[7]</sup> that deliver high gain, rapid beam steering, tracking, and low size, weight, and power (SWaP)<sup>[3][8]</sup>.
+        Low Earth Orbit (LEO) satellites operate much closer to Earth (~160-2,000km) and travel rapidly (~90-120minutes/orbit)<sup>[1]</sup>, enabling high-throughput and low-latency services<sup>[2]</sup>. As a result, ground terminals face challenges like frequent hand-overs, rapidly varying geometry, Doppler effects, and tracking needs<sup>[5]</sup>. The growth of LEO constellations is projected to reach tens of thousands in the coming decade to deliver global coverage<sup>[6]</sup>, thus pushing demand for low-complexity, mass-manufacturable, and high performance user terminals<sup>[7]</sup><sup>[3]</sup><sup>[8]</sup>.      
       </p>
+      
 
       <p>
-        Phased-array electronically-steered antennas (ESAs) provide a compelling LEO and mobile ground-terminal solution<sup>[3]</sup>. Unlike mechanical dishes, ESAs steer beams via phase-shifting/beamforming across an array without moving, enabling rapid beam switching, a low profile, multi-satellite/multi-beam capability, reduced wear and maintenance, and improved links latencies/dynamics<sup>[3][8][9][10]</sup>. Figure 1 substantiates their increasing commercial demand.
+        Phased-array electronically-steered antennas (ESAs) provide a compelling solution<sup>[3]</sup>. Unlike mechanical dishes, ESAs steer beams via phase-shifting/beamforming across an array without moving, enabling rapid beam switching, a low profile, multi-satellite/multi-beam capability, reduced wear and maintenance, and improved links latencies/dynamics<sup>[3][8][9][10]</sup>. Figure 1 substantiates their increasing commercial demand.
       </p>
 
       <image-component
@@ -220,10 +244,10 @@
         source="assets/table1.png"
         subtitle="Table 1: Comparison between GEO and LEO terminals<sup>[1]</sup><sup>[2]</sup><sup>[6]</sup><sup>[10]</sup><sup>[11]</sup><sup>[12]</sup>">
       </image-component>
-
+<p></p>
       <image-component
         tag="image"
-        source="assets/figure1.png"
+        source="assets/figure1n.png"
         subtitle="Figure 1: CAGR of phased-array ESAs<sup>[13]</sup>">
       </image-component>
 
@@ -261,12 +285,12 @@
       <div id="sub-section-2-3">
         <h3>2.3 Scalability and Future-Proofing</h3>
         <p>
-          End-users and integrators increasingly require scalable, interoperable terminals that can operate seamlessly across networks. Current solutions lack this versatility, creating a gap in the market for a universal, high-performance, multi-orbit ground terminal, which adapts to evolving standards and supports multiple service providers, enabling long-term viability and return on investment<sup>[3][8]</sup>.
+          End-users and integrators increasingly require scalable, interoperable terminals that operate seamlessly across networks. Current solutions lack this versatility, creating a gap in the market for a high-performance, multi-orbit ground terminal, which adapts to evolving standards and supports multiple service providers, enabling long-term viability and return on investment<sup>[3][8]</sup>.
         </p>
 
         <image-component
           tag="image"
-          source="assets/figure3.png"
+          source="assets/figure3n.png"
           subtitle="Figure 3: Fishbone Diagram of Problem Definition">
         </image-component>
       </div>
@@ -311,11 +335,11 @@
         </p>
 
         <p>
-          This inherently interoperable design is software/geometrically reconfigurable for different operators, frequency plans, and multi-orbit constellations, minimizing hardware redesign<sup>[3]</sup>.
+          This inherently interoperable design is software reconfigurable for different operators, frequency plans, and multi-orbit constellations, minimizing hardware redesign<sup>[3]</sup>.
         </p>
 
         <p>
-          Furthermore, it is hardware-agnostic, integrating seamlessly with commercial modem/beamforming IC, eliminating vendor lock-in<sup>[3]</sup>. Operating across a relatively wide Ku-band also supports multi-operator operation<sup>[3]</sup>.          Moreover, our scalable ESA array allows flexible adaptation to varying performance and cost requirements, ensuring system longevity and upgradability.
+          Furthermore, it integrates seamlessly with commercial modem/beamforming IC, eliminating vendor lock-in<sup>[3]</sup>. Operating across a relatively wide Ku-band also supports multi-operator operation<sup>[3]</sup>.          Moreover, our scalable ESA array allows flexible adaptation to varying performance and cost requirements.
 
         </p>
 
@@ -323,7 +347,7 @@
         
 
         <p>
-          This enables terminal manufacturers to deliver compact, scalable, and future-ready terminals for next-generation satellite connectivity, leading us to our value proposition statement:
+          This leads us to our value proposition statement:
         </p>
          <image-component
         tag="image"
@@ -355,6 +379,7 @@
         </p>
 
         <image-component
+          id="table3"
           tag="image"
           source="assets/table3.png"
           subtitle="Table 3: Specifications &amp; performance of our shared-aperture, stacked-patch ESA in an 32x32 array">
@@ -377,7 +402,7 @@
         </image-component>
 
         <p>
-          Shared-aperture antennas co-locate multiple functions (e.g., distinct bands or polarizations) within a single panel, eliminating separate arrays. This is highly attractive for platforms with constrained SWaP, like airborne, vehicular, and rooftop installations<sup>[20][21]</sup>. By reducing volume and mechanical complexity<sup>[20]</sup>, they meet the demand for compactness and multi-operator compatibility in terminals<sup>[22]</sup>. Successful implementations rely on isolation techniques to maintain high inter-band isolation and acceptable pattern control, thereby avoiding cross-band interference<sup>[21]</sup>.
+          Shared-aperture antennas co-locate multiple functions within a single panel, eliminating separate arrays. This is highly attractive for platforms with constrained SWaP<sup>[20][21]</sup>. Successful implementations rely on isolation techniques to minimise cross-band interference<sup>[21]</sup>.
         </p>
 
         <h4 id="sub-section-4-2-1-2">4.2.1.2 Stacked-Patch</h4>
@@ -389,23 +414,29 @@
         </image-component>
 
         <p>
-          Stacked-patch antennas use multiple radiating layers (driven and parasitic patches) separated by spacers primarily to increase impedance bandwidth, improve axial-ratio (AR) bandwidth for circular polarization, and elevate realized gain without significantly raising the profile<sup>[24][25][26][27]</sup>. Performance is boosted by multiple merging resonances<sup>[24]</sup>. Furthermore, using aperture coupling via slots provides superior feed-to-radiator isolation<sup>[24][25]</sup>, enabling robust, higher bandwidth operation, especially for Ku applications<sup>[28]</sup>. Our novel design stacks the Tx patches above the Rx, further decreasing the footprint by &gt;40% compared to separate-aperture architecture<sup>[3][8]</sup>.
+          Stacked-patch antennas use multiple radiating layers to increase impedance bandwidth, improve axial-ratio (AR) bandwidth for circular polarization, and elevate realized gain without significantly raising the profile<sup>[24][25][26][27]</sup>. To further improve the performance, several structural enhancements such as air gap layer, parasitic patches, and vias could be introduced into the stack (refer to <a href="#appendixB">Appendix B</a>). Our novel design stacks the Tx patches above the Rx’s, further decreasing the footprint<sup>[3][8]</sup>. The stacked patches form a dual-resonant structure which could radiate at both Tx and Rx frequencies, achieving a wide impedance bandwidth and a smoother reflection coefficient (S<sub>11</sub>)<sup>[48][49]</sup>.
         </p>
+
+        <image-component
+          tag="image"
+          source="assets/figure9nn.png"
+          subtitle="Figure 9: Bandwidth enhancement with 2 well stacked patches radiating at 2 different resonant frequencies<sup>[48]</sup>">
+        </image-component>
 
         <h4 id="sub-section-4-2-1-3">4.2.1.3 Circular Polarization (CP)</h4>
         <p>
-          CP is widely used in satellite links because it mitigates Faraday rotation, orientation misalignment, and polarization mismatch between moving platforms/satellites<sup>[33]</sup>. For a stacked-patch geometry (Tx above Rx patches), opposite-sense CP (Left-Hand CP and Right-Hand CP) is required instead of linear polarization to ensure isolation and prevent cross-interference between the two paths<sup>[24][27]</sup>. CP in patch antennas can be realized through:
+          CP is widely used in satellite links because it mitigates polarization mismatch between moving platforms/satellites<sup>[33]</sup>. By putting Tx above Rx patches, opposite-sense CP (Left-Hand and Right-Hand CP) is required instead of linear polarization to ensure isolation and prevent cross-interference between the two paths<sup>[24][27]</sup>. 
         </p>
 
         <h4>4.2.1.3.1 Single-Feed</h4>
         <p>
-          From Figure 9(a), a square patch with truncated corners introduces perturbations that generate two closely spaced, equal-amplitude orthogonal modes<sup>[34]</sup>. A single offset feed achieves the necessary 90° phase difference, realizing CP with simpler hardware and reduced losses<sup>[34]</sup>, though at the expense of narrower bandwidth.
+          From Figure 10(a), a square patch with truncated corners introduces perturbations that generate two closely spaced, equal-amplitude orthogonal modes<sup>[34]</sup>. A single offset feed achieves the necessary 90° phase difference for CP generation, though at the expense of narrower bandwidth<sup>[34]</sup>.
         </p>
 
         <image-component
           tag="image"
           source="assets/figure10.png"
-          subtitle="Figure 9: (a) Truncated square patch, (b) Feed offset to achieve LHCP, (c) Feed offset to achieve RHCP">
+          subtitle="Figure 10: (a) Truncated square patch, (b) Feed offset to achieve LHCP, (c) Feed offset to achieve RHCP">
         </image-component>
 
         <h4>4.2.1.3.2 Dual-Feed</h4>
@@ -413,11 +444,11 @@
         <image-component
           tag="image"
           source="assets/figure11.png"
-          subtitle="Figure 10: Dual feed (one in red, the other in green) orthogonal to each other to achieve CP<sup>[23]</sup>">
+          subtitle="Figure 11: Dual feed (one in red, the other in green) orthogonal to each other to achieve CP<sup>[23]</sup>">
         </image-component>
 
         <p>
-          This method excites two orthogonal linear modes in the patch using dual feeds, separated by a 90° phase difference. It provides excellent CP purity and wider CP bandwidth but requires two feed networks and an external hybrid coupler, increasing complexity and feed loss<sup>[34]</sup>.
+          This method excites two orthogonal linear modes in the patch using dual feeds. It provides excellent CP purity and wider CP bandwidth, but increases complexity and feed loss<sup>[34]</sup>.
         </p>
 
         <h4 id="sub-section-4-2-1-4">4.2.1.4 Feed</h4>
@@ -430,11 +461,11 @@
         <image-component
           tag="image"
           source="assets/figure12.png"
-          subtitle="Figure 11: Coaxial probe (contacting) feed type">
+          subtitle="Figure 12: Coaxial probe feed type">
         </image-component>
 
         <p>
-          A coaxial probe/inset feed that connects directly to the patch. This is simple and offers good impedance matching, but may cause spurious radiation, mechanical stress, and a narrow bandwidth<sup>[35]</sup>.
+          A coaxial probe/inset feed that connects directly to the patch. This is simple and offers decent impedance matching, but may cause spurious radiation, mechanical stress, and a narrow bandwidth<sup>[35]</sup>.
         </p>
 
         <h4>4.2.1.4.2 Non-Contacting Methods</h4>
@@ -443,7 +474,7 @@
           id="figure13"
           tag="image"
           source="assets/figure13.png"
-          subtitle="Figure 12: Aperture coupling (non-contacting) feed type">
+          subtitle="Figure 13: Aperture coupling feed type">
         </image-component>
 
         <p>
@@ -453,26 +484,26 @@
         <h4 id="sub-section-4-2-2">4.2.2 Competitor Analysis</h4>
 
         <image-component
-          id="table3"
+          id="table4"
           tag="image"
           source="assets/table4.png"
           subtitle="Table 4: Competitor Analysis Table<sup>[3]</sup><sup>[8]</sup><sup>[38[39]]</sup>">
         </image-component>
 
         <p>
-          From Table 4, our proposed ESA array design targets are aligned with real-world system requirements, and thus are ambitious relative to current commercial offerings. The inclusion of shared aperture, stacked-patch topology leading to low SWaP is the key differentiation, while still maintaining high commercial performance<sup>[3]</sup>.
+          From Table 4, our proposed design targets are aligned with real-world system requirements, and thus are ambitious relative to commercial offerings, with our topology leading to low SWaP being the key differentiation<sup>[3][8]</sup>.
         </p>
       </div>
 
       <div id="sub-section-4-3">
         <h3>4.3 Design Strategy</h3>
         <p>
-          In summary, our design strategy focuses on developing a shared-aperture, stacked-patch ESA for Ku-band LEO terminals. By integrating dual-polarized (LHCP/RHCP) stacked patches, we aim to deliver a lightweight, low-profile, and vendor-agnostic solution suited for multi-operator, multi-constellation deployment.
+          The table below summarises our design strategy.
         </p>
 
         <image-component
           tag="image"
-          source="assets/table5.png"
+          source="assets/table5n.png"
           subtitle="Table 5: Key pillars of our design strategy">
         </image-component>
       </div>
@@ -504,38 +535,38 @@
         Although simple and compact, this configuration suffers from limited impedance bandwidth (&lt;10%) due to probe inductance and increased dielectric loading at Ku-band frequencies<sup>[35]</sup>. The vertical probe also introduces unwanted asymmetry, leading to cross-polarization degradation<sup>[40]</sup>. Moreover, mechanical drilling of coaxial probes at mm-level accuracy complicates array fabrication and integration into planar PCBs<sup>[3]</sup>.
       </p>
 
-      <h4>5.1.2.2 Route C</h4>
+      <h4>5.1.2.2 Route B</h4>
       <p>
-        The dual-feed scheme allows better control of orthogonal modes and AR but at the cost of hybrid coupler, phase shifters, and longer feed lines<sup>[41][42]</sup>. These increase insertion loss and degrade radiation efficiency, especially in arrays<sup>[34]</sup>. The added complexity also contradicts manufacturability and cost-efficiency goals.
+        The truncated corner patch (TCP) with single offset feed offers a simpler feeding structure and lower insertion losses<sup>[34]</sup>. However, this structure provides limited control over orthogonal modes, making it more challenging to achieve robust CP and maintain a stable AR across wider bandwidths, especially under array scanning conditions<sup>[64]</sup>.
       </p>
 
-      <h4>5.1.2.3 Route B (Chosen)</h4>
+      <h4>5.1.2.3 Route C (Chosen)</h4>
       <p>
-        The truncated corner patch (TCP) with single offset feed is chosen due to lower insertion losses and reduced feed complexity<sup>[34]</sup>. Together with the stacked-patch structure, aperture coupling enables better isolation between the feed and radiating layers, allowing robust multilayer integration<sup>[3][43]</sup>. Moreover, aperture coupling offers wide impedance bandwidth, reduced spurious radiation, higher CP performance, and preserves the mechanical integrity of radiating patches<sup>[3][24]</sup>. This configuration also allows the use of blind vias (refer to <a href="#section5.2.2.2">section 5.2.1.2</a>) for improved impedance matching. Therefore, Route B presents the best balance between electrical and mechanical performance, impedance and AR bandwidths, polarization purity, manufacturability, and scalability for our ESA.
+        The dual-feed scheme is selected due to its superior control of orthogonal modes, enabling more stable CP and improved AR performance across the operating band<sup>[41][42]</sup>. The benefits outweigh the added feed complexity and potential insertion losses<sup>[42]</sup>. Together with the stacked-patch structure, aperture coupling enables better isolation between the feed and radiating layers, allowing robust multilayer integration<sup>[3][43]</sup>. Moreover, aperture coupling offers wide impedance bandwidth, reduced spurious radiation, higher CP performance, and preserves the mechanical integrity of radiating patches<sup>[3][24]</sup>. Thus, route C presents the best balance between polarization performance, impedance and AR bandwidths, manufacturability, and scalability for our ESA.
       </p>
 
       <h3 id="sub-section-5-2">5.2 Design Solution</h3>
 
       <h4 id="sub-section-5-2-1">5.2.1 Stack Architecture</h4>
 
-      <h4 id="section5.2.2.1">5.2.1.1 Main Layers:</h4>
       <p>
-        The proposed stacked geometry consists of multiple layers arranged vertically. In the order of top to bottom layer:
+        The proposed stacked geometry consists of multiple layers arranged vertically. Table 7 shows the order of top to bottom layer of our ESA. Additional layers (<a href="#appendixB">Appendix B</a>) will be added to further optimize our design.
       </p>
 
       <image-component
+        id="table7"
         tag="image"
-        source="assets/table7.png"
+        source="assets/table7n.png"
         subtitle="Table 7: Main Layers of our ESA">
       </image-component>
 
       <image-component
         tag="image"
         source="assets/figure14.png"
-        subtitle="Figure 13: General configuration of our shared-aperture, stacked-patch ESA<sup>[48]</sup>">
+        subtitle="Figure 14: General configuration of our shared-aperture, stacked-patch ESA<sup>[48]</sup>">
       </image-component>
 
-      <h4 id="section5.2.2.2">5.2.1.2 Additional Layers:</h4>
+      <!-- <h4 id="section5.2.2.2">5.2.1.2 Additional Layers:</h4>
       <p>
         To optimize the performance, several structural enhancements/layers could be introduced into the stack:
       </p>
@@ -573,22 +604,27 @@
         tag="image"
         source="assets/figure17.png"
         subtitle="Figure 16: Via loaded rings around patches 1 and 2<sup>[52]</sup>">
-      </image-component>
+      </image-component> -->
 
       <h4 id="sub-section-5-2-2">5.2.2 Material Selection</h4>
       <p>
-        Commercially, the material used for patches, feed, and ground plane is copper, while the dielectric substrate material must exhibit low dielectric loss, stable εr, and thermal consistency<sup>[3]</sup>. Commercial laminates need to be evaluated in terms of thickness, manufacturability, and cost to enable optimization and mechanical rigidity<sup>[3]</sup>.
+        Commercially, the material used for patches, feeds, and ground planes is copper, while the dielectric substrate material must exhibit low dielectric loss, stable εr, and thermal consistency<sup>[3]</sup>. Commercial laminates need to be evaluated in terms of thickness, manufacturability, and cost to enable optimization and mechanical rigidity<sup>[3]</sup>.
       </p>
 
       <image-component
         tag="image"
         source="assets/figure18.png"
-        subtitle="Figure 17: Bandwidth trends relative to substrate permittivity and thickness<sup>[48]</sup>">
+        subtitle="Figure 15: Bandwidth trends relative to substrate permittivity and thickness<sup>[48]</sup>">
       </image-component>
+
+      <p>
+        Rogers RT/duroid 5880 is selected as the final dielectric substrate due to its low dielectric constant (εr=2.2), which supports wideband operation and improves impedance matching<sup>[5][8]</sup>. Its low loss tangent also enhances radiation efficiency at high frequencies<sup>[3]</sup>. Figure 16 shows its properties and its range of commercially available thicknesses.
+      </p>
+
       <image-component
         tag="image"
-        source="assets/figure19.png"
-        subtitle="Figure 18: Product selector guide from vendor (Rogers Corporation)<sup>[53]</sup>">
+        source="assets/figure16n.png"
+        subtitle="Figure 16: Product selector guide from vendor (Rogers Corporation)<sup>[53]</sup>">
       </image-component>
 
       <h4 id="sub-section-5-2-3">5.2.3 Dimensioning of Key Parameters</h4>
@@ -598,17 +634,18 @@
         A square patch offers easy polarization control and stable radiation pattern symmetry<sup>[54]</sup>. It simplifies dual-band scaling<sup>[54]</sup>, and is standard PCB-compatible for easy fabrication and arraying<sup>[3]</sup>. Its well-studied mode structure (TM₁₀ and TM₀₁) also ensures highly predictable performance and modeling accuracy<sup>[3][54]</sup>.
       </p>
 
-      <h4>5.2.3.1.1 Dimension</h4>
+      <!-- <h4>5.2.3.1.1 Dimension</h4> -->
        <image-component
+       id="figure17"
         tag="image"
         source="assets/3equations.png"
-        subtitle="Figure 19: Patch Length Calculation Equations<sup>[56]</sup>"> "
+        subtitle="Figure 17: Patch Length Calculation Equations<sup>[56]</sup>"> "
       </image-component>
       <p>
-        For a square patch, the resonant length, L, is λ<sub>g</sub>/2<sup>[55]</sup>. Using the above 3 equations<sup>[56]</sup>, we can find the length of patches, given the choice of substrate (with respective εr). Given Tx patch is smaller than Rx (due to smaller λ<sub>0</sub>), it would be placed above in our stacked geometry<sup>[57]</sup>.
+        For a square patch, the resonant length, L, is λ<sub>g</sub>/2<sup>[55]</sup>. Using the above 3 equations<sup>[56]</sup>, we can find the length/width of patches, given the choice of substrate and its thickness. Given Tx patch is smaller than Rx (due to smaller λ<sub>0</sub> as Tx resonates at a higher frequency), it would be placed above Rx in our stacked geometry<sup>[57]</sup>.
       </p>
 
-      <h4>5.2.3.1.2 Corner Truncations</h4>
+      <!-- <h4>5.2.3.1.2 Corner Truncations</h4>
 
       <image-component
         tag="image"
@@ -618,23 +655,23 @@
 
       <p>
         The truncation size (5-10% of patch length) is optimized to achieve a 90° phase difference and equal mode amplitude, ensuring CP generation<sup>[58]</sup>
-      </p>
+      </p> -->
 
       <h4>5.2.3.2 Slot</h4>
 
       <image-component
         tag="image"
         source="assets/figure20.png"
-        subtitle="Figure 20: Different slots geometry<sup>[48]</sup>">
+        subtitle="Figure 18: Different slots geometry<sup>[48]</sup>">
       </image-component>
 
       <p>
-        Rectangular slots (Figures 20(a), (b), and (c)) provide simple coupling, while 'H' and bowtie slots (Figure 20(d) and (e)) offer stronger coupling due to their more uniform field magnitude<sup>[59]</sup>. Combining these 2 into the hourglass-shaped slot (Figure 2(f)) achieves the most uniform field distribution and strongest coupling<sup>[59]</sup>, which is a design we plan to test.
+        Rectangular slots (Figures 18(a), (b), and (c)) provide simple coupling, while 'H' and bowtie slots (Figure 18(d) and (e)) offer stronger coupling due to their more uniform field magnitude<sup>[59]</sup>. Combining these 2 into the hourglass-shaped slot (Figure 18(f)) achieves the most uniform field distribution and strongest coupling<sup>[59]</sup>, which is a design we plan to test.
       </p>
 
       <h4>5.2.3.3 Feed</h4>
       <p>
-        A straight microstrip feedline (refer to <a href="#figure13">Figure 12</a>) is chosen as the excitation mechanism for the patch, because it provides clean coupling, broad bandwidth, and structural simplicity<sup>[59]</sup>.
+        A straight microstrip feedline (refer to <a href="#figure13">Figure 13</a>) is chosen as the excitation mechanism for the patch, because it provides clean coupling, broad bandwidth, and structural simplicity<sup>[59]</sup>. Thinner feed lines couple more strongly to slots<sup>[24]</sup>.
       </p>
 
       <h4>5.2.3.3.1 Feed offset</h4>
@@ -642,23 +679,24 @@
       <image-component
         tag="image"
         source="assets/figure7bc.png"
-        subtitle="Figure 9(b) Feed offset to achieve LHCP, (c) Feed offset to achieve RHCP">
+        subtitle="Figure 10(b) Feed offset to achieve LHCP, (c) Feed offset to achieve RHCP">
       </image-component>
 
       <p>
         Feed offset refers to the lateral displacement of the microstrip feed from the patch’s centerline, controlling coupling strength and mode balance to generate CP. For square patches, the offset feed point is on the diagonal<sup>[60]</sup>.
       </p>
 
-      <h4>5.2.3.3.2 Stub Length</h4>
+      <h4>5.2.3.3.2 Stub</h4>
 
       <image-component
         tag="image"
-        source="assets/figure21.png"
-        subtitle="Figure 21: Stub Length, 𝐿𝑜𝑐 measurement">
+        source="assets/figure19n.png"
+        subtitle="Figure 19: Stub length and width">
       </image-component>
 
       <p>
-        The stub length, 𝐿𝑜𝑐, is the distance between the slot’s center and the feed line’s open end. This section behaves as a reactive tuning stub<sup>[61]</sup>. Tuning 𝐿𝑜𝑐 allows impedance fine-tuning for resonance matching<sup>[61]</sup>.
+        The stub length is the distance between the slot’s center and the feed line’s open end. This section behaves as a reactive tuning stub<sup>[61]</sup>. Tuning the stub’s length and width allows impedance fine-tuning for resonance matching<sup>[61]</sup>.
+
       </p>
     </div>
 
@@ -666,25 +704,29 @@
 
     <!-- Section 6: Prototype & Testing Plan -->
     <div id="section-header-6">
-      <h2>6. Prototype &amp; Testing Plan</h2>
+      <h2>6. Prototype &amp; Testing</h2>
 
       <p>
-        This project uses CST Studio Suite to design, optimize, and validate a stacked-patch antenna element, then scale it into a finite 32×32 array. The workflow is split into two stages:
+        This project uses CST Studio Suite 2025 to design, optimize, and validate a stacked-patch antenna element, then scale it into a finite 2×2 array before fabrication. The workflow is split into three stages:
       </p>
 
       <p>
-        1. Unit-cell simulation to finalize the element geometry and performance.
+        1. Single element simulation.
       </p>
 
       <p>
-        2. Finite 32x32 array simulation to evaluate array-level metrics.
+        2. Finite 2x2 array simulation.
+      </p>
+
+      <p>
+        3. Finite 2x2 array fabrication and testing.
       </p>
 
       <h3 id="sub-section-6-1">6.1 Prototype</h3>
 
-      <h4 id="sub-section-6-1-1">6.1.1 Unit-cell design and simulation</h4>
+      <h4 id="sub-section-6-1-1">6.1.1 Unit-element Design and Simulation</h4>
 
-      <h4>6.1.1.1 Geometry Creation and Layer Definition</h4>
+      <!-- <h4>6.1.1.1 Geometry Creation and Layer Definition</h4>
       <p>
         Each layer from <a href="#section5.2.2.1">section 5.2.1.1</a> is individually defined and built on one another, with dimensions, materials, and thicknesses modelled based on commercial availability. Via fences, air gaps, and parasitic patches will also be modelled.
       </p>
@@ -693,9 +735,9 @@
         tag="image"
         source="assets/figure22.png"
         subtitle="Figure 22: Defining dimension, thickness, and material of a dielectric layer on CST">
-      </image-component>
+      </image-component> -->
 
-      <h4>6.1.1.2 Boundary Conditions and Excitation Setup</h4>
+      <h4>6.1.1.1 Boundary Conditions and Excitation Setup</h4>
       <p>
         Periodic Boundary Conditions (PBCs) are applied on the X- and Y-axes to mimic an infinite array, while the Z-axis uses Open boundaries to simulate free-space radiation.
       </p>
@@ -703,23 +745,565 @@
       <image-component
         tag="image"
         source="assets/figure23(a).png"
-        subtitle="Figure 23: Setting of Boundary Conditions">
+        subtitle="Figure 20: Setting of Boundary Conditions">
       </image-component>
 
       <p>
         The feed excitation is introduced through a waveguide port at the feedline input, matched to 50Ω.
       </p>
 
-      <h4>6.1.1.3 Frequency Sweep and Parameter Tuning</h4>
+      <h4>6.1.1.2 Building of Unit-element</h4>
       <p>
-        A discrete frequency sweep is set up across 10-15GHz to cover both Rx and Tx bands.
+        The prototyping process was carried out in three progressive stages to ensure systematic validation and controlled integration of complexity. To achieve the aforementioned array footprint in <a href="#table3">Table 3</a>, each unit-element is designed with a target dimension of 10mm by 10mm.  The design evolved from a single-patch configuration to a stacked dual-patch structure, and finally to a dual-feed circularly polarized antenna element.
+      </p>
+      <h4>Stage 1: Single Patch with Offset Feed and Slot</h4>
+      <p>
+        The first stage focused on developing a single-patch aperture-coupled antenna to establish baseline performance and fundamental design understanding. Each layer and feature from <a href="#table7">Table 7</a> was constructed systematically and parameterized using variables to enable efficient tuning and optimization in future iterations.       
       </p>
 
-      <p>
-        Key geometric parameters (patch dimensions, layers’ thickness, slot geometry, feed offset, stub length, etc.) are parameterized within CST using the built-in Parameter Sweep Tool to fine-tune individual parameters and identify their optimal values, allowing us to understand how each physical modification influences antenna behavior.
-      </p>
+      <image-component
+        tag="image"
+        source="assets/figure21n.png"
+        subtitle="Figure 21:  Building and Parameterizing of each layer and features">
+      </image-component>
+    
+<p>
+  At this stage, only the Tx patch was implemented, targeting a single resonant frequency at 14.25GHz. An hour-glass slot was implemented. 
+</p>
 
-      <p>
+<image-component
+  tag="image"
+  source="assets/figure22nn.png"
+  subtitle="Figure 22: Hour-glass slot implemented on the Ground Plane">
+</image-component>
+
+<p>
+  The feedline and slot was offset from the patch center to achieve proper impedance matching and effective excitation of the patch’s dominant mode. 
+</p>
+
+<image-component
+  tag="image"
+  source="assets/figure23nn.png"
+  subtitle="Figure 23: Feedline and slot displaced in the y-direction from the patch centre">
+</image-component>
+
+<p>
+  The microstrip feedline width was also tuned to ensure a 50Ω characteristic impedance.
+</p>
+
+<image-component
+  tag="image"
+  source="assets/figure24n.png"
+  subtitle="Figure 24: Tuning feedline width (Fw) to match 50Ω">
+</image-component>
+
+<p>
+  Copper components (ground planes, feed, patch) were set to a thickness of 0.035mm, according to standard manufacturing practices.
+</p>
+
+<image-component
+  tag="image"
+  source="assets/figure25n.png"
+  subtitle="Figure 25: Thickness of copper components/layers">
+</image-component>
+
+<p>
+  The dielectric substrate selected at this stage was RO4450B (εr=3.54) with a thickness of 0.5mm. Standard manufacturing practices were incorporated by setting the substrate thickness between the lower ground plane and the microstrip feedline, as well as between the microstrip and the slotted ground plane, to 0.203mm. The last layer of substrate was set to 0.138mm, insulating the lower ground plane.
+</p>
+
+<image-component
+  tag="image"
+  source="assets/figure26n.png"
+  subtitle="Figure 26: Thickness of dielectric substrate layers">
+</image-component>
+
+<p>
+  Using the Parameter Sweep Tool, parametric sweeps were conducted to optimize key design parameters, including patch dimensions, stub length and width, feed offset, and slot geometry, while maintaining sufficient geometric constraints to accommodate a future addition of orthogonal feed for CP. 
+</p>
+
+<image-component
+  tag="image"
+  source="assets/figure27n.png"
+  subtitle="Figure 27: Parameter sweeps carried out on various parameters using the Parameter Sweep Tool for optimization">
+</image-component>
+
+<p>
+  The resulting S₁₁ response demonstrated satisfactory impedance matching (<-10dB) at 14.25GHz, validating the initial design approach.
+</p>
+
+<image-component
+  tag="image"
+  source="assets/figure28n.png"
+  subtitle="Figure 28: S₁₁ plot of Stage 1 model">
+</image-component>
+
+<image-component
+  tag="image"
+  source="assets/figure29n.png"
+  subtitle="Figure 29: Stage 1 final model">
+</image-component>
+
+<h4>Stage 2: Dual-Patch Stacked Configuration</h4>
+<p>
+  In the second stage, the design was extended to a stacked configuration by introducing a Rx patch beneath the Tx patch, enabling dual-band operation. The vertical separation between the two patches was set to 0.5mm. This configuration allowed the two patches to resonate at different frequencies. However, the impedance bandwidth was not wide enough to cover both Tx and Rx bands (10.9GHz-14.5GHz).
+</p>
+
+<image-component
+  tag="image"
+  source="assets/figure30n.png"
+  subtitle="Figure 30: Initial S₁₁ results of stacked model">
+</image-component>
+
+<p>
+  To improve bandwidth, the substrate material was changed to RT/duroid 5880, which has a lower dielectric constant (εr=2.2), and the thickness was increased from 0.5mm to 0.79mm. 
+</p>
+
+<image-component
+  tag="image"
+  source="assets/figure31n.png"
+  subtitle="Figure 31: New thickness of dielectric substrates to improve bandwidth">
+</image-component>
+
+<p>
+  Rigorous parametric optimization was then performed on key parameters using both the Parameter Sweep Tool first, then Optimizer Tool, and the most optimized S₁₁ was achieved as shown below.
+</p>
+
+<image-component
+  tag="image"
+  source="assets/figure32n.png"
+  subtitle="Figure 32: S₁₁ results after changing the substrate material and increasing its thickness">
+</image-component>
+
+<p>
+  Given that the target resonant frequencies are 14.25GHz for Tx and 11.7GHz for Rx, from Figure 32, the design is unable to meet the target Tx as the S₁₁ went above −10 dB beyond 14.1GHz.
+</p>
+
+<p>
+  Moreover, prior to obtaining results as shown in Figure 32, it was observed that the hour-glass slot occupies a relatively large area near to the patch centre, which may pose challenges when incorporating an additional orthogonal feed and slot subsequently. Hence, alternative slot geometries, including bowtie and H-shaped slots, were explored.
+</p>
+
+<image-component
+  tag="image"
+  source="assets/figure33n.png"
+  subtitle="Figure 33: Hour-glass slot geometry being excessively large near patch centre">
+</image-component>
+
+<image-component
+  tag="image"
+  source="assets/figure34n.png"
+  subtitle="Figure 34: Alternative bowtie and H-slots were explored">
+</image-component>
+
+<p>
+  Among these, the H-slot demonstrated better performance in terms of impedance matching, bandwidth, and greater positional flexibility, as it can be more significantly offset from patch centre, which would minimise cross-polarization between the two feeds subsequently.
+</p>
+
+<image-component
+  tag="image"
+  source="assets/figure35n.png"
+  subtitle="Figure 35: Position of offset feed and slot">
+</image-component>
+
+<p>
+  Parametric optimization was then performed to further fine-tune the design parameters, resulting in improved S₁₁ characteristics.
+</p>
+
+<image-component
+  tag="image"
+  source="assets/figure36n.png"
+  subtitle="Figure 36: S₁₁ of Stage 2 model">
+</image-component>
+
+<p>
+  Although dual resonant frequencies were not observed, the S₁₁ remained below −10 dB across both the operating bands, which is considered acceptable given that only a single feed is employed.
+</p>
+
+<image-component
+  tag="image"
+  source="assets/figure37n.png"
+  subtitle="Figure 37: Stage 2 final model">
+</image-component>
+
+<image-component
+  tag="image"
+  source="assets/figure38n.png"
+  subtitle="Figure 38: Copper Layers for Stage 2 model">
+</image-component>
+
+<h4>Stage 3: Dual-Feed Circularly Polarized Configuration</h4>
+<p>
+  In the final stage, the antenna was upgraded to a dual-feed configuration to enable CP. An additional orthogonal feedline and corresponding slot were introduced to excite two orthogonal modes of the patches. 
+</p>
+
+<image-component
+  tag="image"
+  source="assets/figure39n.png"
+  subtitle="Figure 39: Addition of orthogonal feed and corresponding slot">
+</image-component>
+
+<p>
+  Careful consideration was given to the spacing between slots to reduce cross-polarization degradation. 
+</p>
+
+<p>
+  Vias were also incorporated between the two ground planes to improve electromagnetic confinement and suppress surface waves<sup>[65][66]</sup>. A diagonal configuration was employed to introduce a controlled perturbation along the patch’s diagonal, supporting CP while facilitating effective mode control and frequency tuning<sup>[67]</sup>. 
+</p>
+
+<image-component
+  tag="image"
+  source="assets/figure40n.png"
+  subtitle="Figure 40: Diagonal configuration of vias between two ground planes">
+</image-component>
+
+<p>
+  Extensive parametric tuning was carried out on the patch dimensions, slot geometries, feed offsets, stub lengths, and via configurations. The Optimizer Tool was then used to achieve optimal performance in terms of S₁₁, S₂₁, AR, and realized gain.
+</p>
+
+<image-component
+  tag="image"
+  source="assets/figure41n.png"
+  subtitle="Figure 41: S₁₁ of Stage 3 model">
+</image-component>
+
+<image-component
+  tag="image"
+  source="assets/figure42n.png"
+  subtitle="Figure 42: S₂₁ of Stage 3 model">
+</image-component>
+
+<p>
+  The S₁₁ demonstrates dual-resonance behavior with a primary resonance near 11.2GHz and a secondary around 14.1GHz. The -10dB impedance bandwidth covers both Tx and Rx bands (10.9–14.5GHz), confirming the antenna is well-matched.
+</p>
+
+<p>
+  For S₂₁, the design achieves excellent port-to-port isolation, remaining below -15dB across the whole band. This minimal mutual coupling between the dual feeds ensures that phase quadrature is preserved, directly supporting the realization of high CP purity and cross-polarization discrimination (XPD)<sup>[3][8]</sup>.
+</p>
+
+<p>
+  To validate the dual polarization capabilities, we isolated the excitation of each port while terminating the other. Results were taken at Rx resonant frequency (11.7GHz) and Tx’s (14.26GHz).
+</p>
+
+<image-component
+  tag="image"
+  source="assets/figure43n.png"
+  subtitle="Figure 43: Port 1 excited, port 2 terminated realized gain at 11.7 GHz in the ϕ = 0°(left) and ϕ = 90°(right) planes">
+</image-component>
+
+<p>
+  When Port 1 is active, the unit-element produces a stable, directive radiation pattern with a peak realized gain of 4.21dBi. In the ϕ=0° plane, the 3dB angular width is 97.9° (from -51.8° to 46.1°), while in the ϕ=90° plane, it remains broad at 91.6° (-43.0° to 48.6°). This wide beamwidth is essential for achieving the target ±53° scan volume in the full-scale array. Furthermore, the cross-polarization level (GainTheta in ϕ=0° and GainPhi in ϕ=90°) is suppressed to -12.0dBi, representing an XPD of 16.2dB (4.21-(-12.0)dBi) at boresight.
+</p>
+
+<image-component
+  tag="image"
+  source="assets/figure44n.png"
+  subtitle="Figure 44: Port 2 excited, port 1 terminated realized gain at 11.7 GHz in the ϕ = 0°(left) and ϕ = 90°(right) planes">
+</image-component>
+
+<p>
+  Port 2 performance closely mirrors Port 1, confirming the structural symmetry of the dual-feed architecture with a consistent peak gain of 4.22 dBi. The 3 dB beamwidth measures 91.5° (ϕ=0°) and 98.5° (ϕ=90°). The inversion in angular width between the two ports is expected, as the E-plane and H-plane orientations rotate by 90° between the vertical and horizontal feed ports. The isolation remains robust, with cross-polarization suppression levels identical to Port 1, ensuring minimal interference between the two signal paths.
+</p>
+
+<image-component
+  tag="image"
+  source="assets/figure45n.png"
+  subtitle="Figure 45: Port 1 excited, port 2 terminated realized gain at 14.26 GHz in the ϕ = 0°(left) and ϕ = 90°(right) planes">
+</image-component>
+
+<p>
+  At 14.26GHz, Port 1 excitation yields a peak realized gain of 4.30dBi. The radiation patterns maintain a broad profile, with 3dB beamwidth of 88.9°(ϕ=0°) and 77.38° (ϕ=90°). While the cross-polarization isolation remains robust, the XPD decreases to ~10dB at this higher frequency.
+</p>
+
+<image-component
+  tag="image"
+  source="assets/figure46n.png"
+  subtitle="Figure 46: Port 2 excited, port 1 terminated realized gain at 14.26 GHz in the ϕ = 0°(left) and ϕ = 90°(right) planes">
+</image-component>
+
+<p>
+  Port 2 exhibits high symmetry to Port 1, achieving a peak realized gain of 4.60dBi. The 3dB beamwidth measures 77.13° (ϕ=0°) and 89.69° (ϕ=90°). This expected rotation in principal planes between ports confirms that the feed structure is delivering orthogonal linear polarizations with nearly identical power envelopes. The consistency in gain and beamwidth across both ports is essential for generating high-quality CP when combined with a 90° phase shift<sup>[8]</sup>.
+</p>
+
+<p>
+  Overall, a comparison between the 11.7GHz and 14.26GHz results shows that the unit-element maintains a stable gain profile across both Rx and Tx bands, with less than 0.4dBi deviation between the two resonant frequencies. The persistent symmetry between the vertical and horizontal feed ports across the entire operating spectrum validates the unit-element as reliable and predictable.
+</p>
+<p>
+  Both ports were then excited simultaneously with a 90° phase shift to produce CP. As shown in Figure 47, the unit-element maintains the standard high-quality threshold of AR<3dB across 10.9GHz to 14.26GHz. This confirms the aperture-coupled feed is highly symmetrical and well-matched for the Rx band (11.7 GHz). However, the AR ascends sharply beyond 13.6GHz, reaching the 3dB limit at the 14.26GHz Tx resonance, which directly correlates with the aforementioned lowered 10dB XPD.
+</p>
+
+<image-component
+  tag="image"
+  source="assets/figure47n.png"
+  subtitle="Figure 47: Axial Ratio generally <3dB within operational band (10.9-14.5GHz)">
+</image-component>
+
+<p>
+  As a final refinement, patch, stub, and slot geometries were filleted with a 0.4mm radius to improve manufacturability and reduce fabrication sensitivities at sharp discontinuities.<sup>[3][8]</sup>. The design was subsequently re-optimized to ensure that performance was preserved following these modifications. Below shows the final dimensions of the unit-element before scaling to an array.
+</p>
+
+<image-component
+  tag="image"
+  source="assets/figure48n.png"
+  subtitle="Figure 48: Tx and Rx patch dimensions">
+</image-component>
+
+<image-component
+  tag="image"
+  source="assets/figure49n.png"
+  subtitle="Figure 49: Slot dimensions">
+</image-component>
+
+<image-component
+  tag="image"
+  source="assets/figure50n.png"
+  subtitle="Figure 50: Feed dimensions">
+</image-component>
+
+<image-component
+  tag="image"
+  source="assets/figure51n.png"
+  subtitle="Figure 51: Via dimension and configuration">
+</image-component>
+
+<image-component
+  tag="image"
+  source="assets/figure52n.png"
+  subtitle="Figure 52: Dielectric substrates thicknesses">
+</image-component>
+
+<image-component
+  tag="image"
+  source="assets/figure53n.png"
+  subtitle="Figure 53: Stage 3 final model">
+</image-component>
+
+<h4 id="sub-section-6-1-2">6.1.2 Finite Array Design and Simulation</h4>
+
+<h4>6.1.2.1 Boundary Conditions and Excitation Setup</h4>
+<p>
+  Open Boundary Conditions are applied on all the X-, Y-, and Z-axes to simulate free-space radiation.
+</p>
+
+<image-component
+  tag="image"
+  source="assets/figure54n.png"
+  subtitle="Figure 54: Setting of boundary conditions">
+</image-component>
+
+<h4>6.1.2.2 Building of 2 x 2 array</h4>
+<p>
+  The transition from a single unit-element to a 2x2 planar array was implemented by arranging the four elements in a symmetrical grid as shown below.
+</p>
+
+<image-component
+  tag="image"
+  source="assets/figure55n.png"
+  subtitle="Figure 55: 2x2 array implemented by arranging 4 elements">
+</image-component>
+
+<h4>6.1.2.3 Performance of 2x2 array</h4>
+
+<image-component
+  tag="image"
+  source="assets/figure56n.png"
+  subtitle="Figure 56: RHCP and LHCP realized gain of 2x2 array at 11.7 GHz in the ϕ = 0°(left) and ϕ = 90°(right) planes">
+</image-component>
+
+<p>
+The peak realized gain at boresight increased to 8.79dBi, a ~4.6dB improvement over the unit-element (~4.2dBi). This aligns with theoretical array factor summation, accounting for minor mutual coupling and feed network losses. Consequently, the beamwidth has sharpened to 61.9° in the ϕ=0° plane and 62.8° in the ϕ=90° plane. This enhanced directivity is a critical baseline for achieving the high EIRP (Equivalent Isotropically Radiated Power) required for the scaled 32x32 arrray.
+</p>
+
+<p>
+  The array also exhibits good polarization health. The cross-polarized component (LHCP), represented by the lower curves in both figures, is suppressed to -10.36dBi at boresight. This results in an XPD of 19.15dB, indicating that the feeding network and the 90° phase-shift mechanism maintain high precision across all four elements. Furthermore, the symmetry between the ϕ=0° and ϕ=90° planes ensures a stable phase center and minimal squint, which is essential for maintaining a low AR across the main lobe.
+</p>
+
+<image-component
+  tag="image"
+  source="assets/figure57n.png"
+  subtitle="Figure 57: RHCP and LHCP realized gain of 2x2 array at 14.26 GHz in the ϕ = 0°(left) and ϕ = 90°(right) planes">
+</image-component>
+
+<p>
+  At 14.26GHz, the array achieves a peak realized gain of 10.19dBi at boresight, representing a notable increase. This gain enhancement is accompanied by further beam narrowing (52.49° in the ϕ=0° plane, 55.02° in the ϕ=90° plane), validating the array's ability to focus energy effectively.
+</p>
+
+<p>
+The array maintains a high degree of LHCP polarization purity. The cross-polarized RHCP component is suppressed to -12.79dBi, yielding a XPD of 22.98dB. However, the divergence between the RHCP and LHCP envelopes at wider angles suggests increasing ellipticity toward the beam edges, where circularity is slightly degraded. This behavior aligns with the previously established unit-element AR. 
+</p>
+
+<image-component
+  tag="image"
+  source="assets/figure58n.png"
+  subtitle="Figure 58: Axial Ratio of 2x2 array">
+</image-component>
+
+<p>
+  From Figure 58, the array maintains excellent CP purity, with the boresight AR remaining below the critical 3dB threshold across the operating band.
+</p>
+
+<p>
+  Overall, the simulated performance of the 2x2 array confirms a successful transition from a unit-element to a subarray, providing a reliable foundation for hardware fabrication. At both the 11.7GHz(Rx) and 14.26GHz(Tx) frequencies, the array demonstrates stable radiation characteristics, significant gain enhancement, and well-defined beam narrowing.
+</p>
+<h3 id="sub-section-6-2">6.2 Testing</h3>
+<h4 id="sub-section-6-2-1">6.2.1 Fabrication of Array</h4>
+<p>
+  Following the simulation-based optimization, the 2x2 patch array was fabricated to validate its performance under real-world conditions.
+</p>
+
+<image-component
+  tag="image"
+  source="assets/figure59n.png"
+  subtitle="Figure 59: Fabricated 2x2 array">
+</image-component>
+
+<p>
+  Additionally, a corporate feeding structure, specifically the Wilkinson Power Divider (<a href="#appendixC">Appendix C</a>), was integrated into the back of the PCB. The network is designed with two primary ports: Port 1 (S₁₁), which feeds the four vertical polarization components of the patches, and Port 2 (S₂₂), which feeds the four horizontal polarization components. To manage the phase and amplitude distribution required for beamsteering and CP, the array was integrated with a Beamforming Integrated Circuit (BFIC) too.
+</p>
+
+<h4 id="sub-section-6-2-2">6.2.2 Testing of Array </h4>
+<p>
+  The fabricated array was mounted in a far-field anechoic chamber to eliminate external interference and multi-path reflections. The testing setup involved a standard gain horn antenna as the transmitter and the 2x2 array prototype as the receiver, mounted on a precision multi-axis positioner. This configuration allowed for the high-resolution mapping of the S-parameters, realized gain, and CP across the targeted frequency spectrum. This comprehensive testing environment confirms the efficiency of the integrated feeding network and the functional readiness of the BFIC-controlled array for high-speed communication applications.
+</p>
+
+<image-component
+  tag="image"
+  source="assets/figure60n.png"
+  subtitle="Figure 60: Fabricated 2x2 array mounted in an anechoic chamber">
+</image-component>
+
+<image-component
+  tag="image"
+  source="assets/figure61n.png"
+  subtitle="Figure 61: Dual-polarization standard gain horn">
+</image-component>
+
+<h4 id="sub-section-6-2-3">6.2.3 Test Results</h4>
+
+<image-component
+  id="figure62"
+  tag="image"
+  source="assets/figure62n.png"
+  subtitle="Figure 62: S-parameters of 2x2 array">
+</image-component>
+
+<p>
+  The measured S-parameters confirm a robust dual-band resonance characteristic across the frequency spectrum. Both S₁₁ and S₂₂ were below -10dB across 10.9GHz-14.5GHz. Furthermore, the S₂₁ curve, representing the isolation between the vertical and horizontal feed structures, remains below -20dB across the entire operating range. This high level of isolation is critical for maintaining polarization purity and preventing signal leakage between the two orthogonal feeding paths.
+</p>
+
+<image-component
+  tag="image"
+  source="assets/figure63n.png"
+  subtitle="Figure 63: RHCP realized gain at 11.7GHz in the ϕ = 0°(left) and ϕ = 90° (right) planes">
+</image-component>
+
+<p>
+  At the lower resonance of 11.7GHz, the array exhibits highly symmetrical radiation patterns in both planes. The measured peak realized gain reaches ~8dBi, which aligns closely with the simulated results (8.79dBi). The slight drop is likely due to minor fabrication tolerances and dielectric losses in the physical substrate. The measured patterns show a slightly narrower beamwidth in the ϕ=0°, but a strong overlap between the simulated and measured curves, particularly at the boresight. The slight ripples observed in the measured traces at wider angles (θ=±60°) are typical of anechoic chamber measurements and reflect minor reflections or ground-plane edge effects.
+</p>
+
+<image-component
+  tag="image"
+  source="assets/figure64n.png"
+  subtitle="Figure 64: LHCP realized gain at 14.25GHz in the ϕ = 0°(left) and ϕ = 90° (right) planes">
+</image-component>
+
+<p>
+  Performance at the upper resonance (14.25GHz) remains stable, with measured gain peaking ~10dBi. While the patterns maintain a directive boresight beam, there is a slight observable deviation between the measured and simulated data at wider angles. Nevertheless, the array maintains a clean main lobe and well-suppressed side lobes. The consistency between the ϕ=0° and ϕ=90° planes further validates its ability to support wideband operation.
+</p>
+  
+</div>
+    </div>
+
+    <sl-divider></sl-divider>
+
+
+<!-- Section 7: Analysis -->
+    <div id="section-header-7">
+      <h2>7. Analysis</h2>
+    <div id="sub-section-7-1">
+<h3 id="sub-section-7-1">7.1 Simulation vs Fabricated 2x2 Subarray</h3>
+<p>
+The measured S-parameters of the 2x2 subarray exhibit primary resonances at 11.5GHz and 13.85GHz (<a href="#figure62">Figure 62</a>), shifting slightly from the intended design targets. These deviations are primarily attributed to the cumulative effect of fabrication tolerances, specifically variations in the dielectric constant of the substrate and the precision of the aperture-coupled slot etching<sup>[3][8]</sup>. 
+</p>
+
+<p>
+Despite these shifts, both S₁₁ and S₂₂ remain below -10dB across the operational bandwidth, ensuring efficient power transfer. Furthermore, the S₂₁ isolation remains <-20dB throughout the resonances, confirming that the structural shifts have not compromised the port-to-port decoupling required for stable CP. Moreover, at the 11.7GHz(Rx) and 14.25GHz(Tx) resonances, measured gains of 8dBi and 10dBi, respectively, show strong correlation with simulated models. These measurements validate that the design is resilient to minor manufacturing variances while maintaining the necessary impedance bandwidth and gain.
+</p>
+<div id="sub-section-7-2">
+<h3 id="sub-section-7-2">7.2 Scaling Projections for 32x32 Array Architecture</h3>
+
+<p>
+  The transition from a 2x2 subarray to a full 32-element linear dimension implies a scaling factor of 16 in each dimension, totaling 1024 elements. A significant advantage of scaling to a 32x32 architecture is the transition from an edge-element dominant environment to an embedded element environment<sup>[3][8]</sup>. While the 2x2 subarray is limited by asymmetrical mutual coupling and fringe effects, the 1024-element array functions as a highly periodic structure. This uniformity allows the active reflection coefficient to converge to a steady state, resulting in improved and more predictable impedance matching. By mitigating edge-related discontinuities, the full-scale aperture will achieve enhanced S₁₁ and S₂₂ stability, provided active impedance is managed to prevent scan blindness during wide-angle steering.
+</p>
+
+<p>
+  Theoretically, increasing the array size by a factor of 16 provides a gain enhancement of approximately 10log<sub>10</sub>(256)=24dB. Based on the measured 8dBi from the 2x2 subarray, the 32x32 array is projected to achieve a boresight gain of 32dBi at 11.7GHz. Similarly, given the 10dBi measurement at 14.26GHz, the scaled Tx gain is projected to reach 34dBi. Referring back to <a href="#table3">Table 3</a> and <a href="#table4">Table 4</a> for the full array’s targeted specifications and performance, these gain projections confirm that our design provides the necessary aperture efficiency to meet the high-gain requirements of LEO satellite links.
+</p>
+
+<p>
+  To accurately forecast the performance of the full array, the analysis must also account for the integration of active RF front-end components and layout constraints. For the Tx path, the EIRP is calculated by: 
+</p>
+
+<image-component
+  tag="image"
+  source="assets/figure65n.png"
+  subtitle="Figure 65: Formula to calculate EIRP">
+</image-component>
+
+<p>
+  With a channel output power of ~9dBm, a projected Tx gain of 34dBi, and 1024 individual PAs (+30dB), the system achieves an overall EIRP of 73dBm (43dBW). This exceeds the target specification of 42.5dBW (<a href="#table3">Table 3</a>), allowing for a healthy buffer against feed network losses.
+</p>
+
+<p>
+  For the receive path, the G/T is calculated using the projected Rx gain (32dBi) and the noise performance of the selected LNA. With a Noise Figure (NF) of 1dB, the system is well-positioned to surpass the 6.8dB/K requirement (refer to <a href="#appendixE">Appendix E</a> for calculations).
+</p>  
+
+<p>
+  The target scan volume of ±53° (<a href="#table4">Table 4</a>) is a rigorous design constraint that requires the suppression of grating lobes and the maintenance of polarization purity at high offsets. <a href="#appendixF">Appendix F</a> shows that the element spacing of 10mm is adequate to meet the maximum scan angle. Moreover, the high port isolation (S₂₁<-20dB) verified in the 2x2 prototype is a strong indicator of stability; low mutual coupling reduces the active impedance variations that typically cause scan blindness at wide angles. Furthermore, the broad-beam characteristics observed in the unit-element (91.5°-98.5°) ensure that the "element factor" does not prematurely attenuate the "array factor" during steering. At the maximum ±53° scan angle, the array will experience a projection-based scan loss of approximately cos(53°)=2.3dB. Given the projected boresight gain of 32-34 dBi, the system maintains sufficient headroom to ensure that the gain at the scan edge remains above the operational threshold for consistent satellite connectivity.
+</p>
+
+<p>
+  In conclusion, the 2x2 results provide a technically sound foundation for the fabrication of the full-scale 32x32 array. The stability of the measured radiation envelopes, combined with the successful integration of the 90° phase-shifting logic for RHCP and LHCP, validates the dual-band, shared-aperture architecture. By correlating the empirical subarray data with link budget requirements, it is demonstrated that the proposed ESA will meet EIRP and G/T targets while maintaining stable performance across a wide scanning volume, confirming its readiness for final assembly and experimental validation.
+</p>
+</div>
+
+    <sl-divider></sl-divider>
+
+<!-- Section 8: Shortcomings and Future Work -->
+     <div id="section-header-8">
+      <h2>8. Shortcomings and Future Work</h2>
+<p>
+  While the 2x2 subarray has provided a robust validation of our design, several technical limitations were identified.
+</p>
+
+<p>
+  A primary limitation identified in the 2x2 subarray is the degradation of polarization purity at higher frequencies. For future work, a re-optimization of design will be performed to balance XPD across the full bandwidth.
+</p>  
+
+<p>
+  Furthermore, the transition to a full-scale 32x32 active ESA introduces severe thermal challenges. Dissipating <180W within a compact 32cm x 32cm footprint necessitates a multi-layer PCB design with dense thermal vias and integrated heat sinks to prevent gain droop and phase instability.
+</p>
+
+<p>
+  To enhance scanning performance out to ±53°, future iterations will implement array tapering (amplitude weighting). While uniform excitation maximizes gain, it produces high sidelobes that can lead to interference. By applying a tapering profile, we can suppress sidelobes and improve the beam shape during wide-angle steering. This must be balanced against the resulting "taper loss" to ensure the 42.5dBW EIRP and 6.8dB/K G/T targets are maintained.
+</p>
+
+<p>
+  Additionally, as the array scales, the cumulative phase and amplitude errors within the corporate feed network can lead to beam squint and increased sidelobe levels. To mitigate this, a digital beamforming backend will be integrated to allow for real-time calibration and adaptive null-steering. "Active element pattern" simulations are required to mitigate scan blindness caused by cumulative mutual coupling in the 1024-element environment.
+</p>
+
+<p>
+  Finally, to manage the dynamic nature of LEO constellations, we are looking at integrating the digital beamforming backend with Machine Learning algorithms which reside within the BFIC logic to predict satellite trajectories and optimize beam-switching. This predictive approach is essential for handling the frequent handovers required as LEO satellites move rapidly across the sky, ensuring seamless connectivity and reduced latency for moving-platform applications. This intelligent backend will be critical for maintaining a resilient link in high-density LEO satellite environments.
+</p>
+</div>
+
+      <sl-divider></sl-divider>
+
+  <!-- Section 9: Conclusion -->
+     <div id="section-header-9">
+      <h2>9. Conclusion</h2>
+<p>
+  In conclusion, this project presents a proof-of-concept of a high-performance 32x32 ESA that addresses the critical SWaP constraints of modern satellite ground segments by integrating Tx and Rx functions into a single, co-located aperture. By employing a software-reconfigurable, wideband architecture compatible with commercial BFICs, the design effectively eliminates vendor lock-in and protocol fragmentation. Furthermore, the future integration of array tapering and ML-driven handover logic ensures that this scalable solution remains interoperable and resilient across evolving LEO constellations, providing a long-term viable terminal for mobile/rooftop applications.
+</p>
+      <!-- <p>
         After which, CST’s Optimizer module could perform a multi-variable optimization, tuning for the best trade-off between bandwidth, gain, and polarization performance.
       </p>
 
@@ -936,7 +1520,7 @@
       <image-component
         tag="image"
         source="assets/figure37.png"
-        subtitle="Figure 39: S11 plot of Tx base model with parasitic patch">
+        subtitle="Figure 39: S₁₁ plot of Tx base model with parasitic patch">
       </image-component>
 
       <p>
@@ -946,7 +1530,7 @@
 
     <sl-divider></sl-divider>
 
-    <!-- Section 7: Shortcomings -->
+    Section 7: Shortcomings
     <div id="section-header-7">
       <h2>7. Shortcomings</h2>
       <p>
@@ -962,7 +1546,7 @@
 
     <sl-divider></sl-divider>
 
-    <!-- Section 8: Future Work -->
+    Section 8: Future Work
     <div id="section-header-8">
       <h2>8. Future Work</h2>
 
@@ -976,7 +1560,7 @@
         source="assets/figure38.png"
         subtitle="Figure 40: Project Timeline">
       </image-component>
-    </div>
+    </div> -->
 
     <sl-divider></sl-divider>
 
@@ -988,24 +1572,24 @@
   <h3 id="appendixA">Appendix A</h3>
   Additional Literature Review
 
-  <h4>4.2.1.5 Ku-Band Operation</h4>
+  <h4>Ku-Band Operation</h4>
 
   <image-component
     tag="image"
     source="assets/figure39.png"
-    subtitle="Figure 41: World allocation of frequencies divided into 3 regions by the ITU<sup>[29]</sup>">
+    subtitle="Figure 66: World allocation of frequencies divided into 3 regions by the ITU<sup>[29]</sup>">
   </image-component>
 
   <image-component
     tag="image"
     source="assets/figure40.png"
-    subtitle="Figure 42: Allocation of 10.9~12.7 GHz by the ITU<sup>[29]</sup>">
+    subtitle="Figure 67: Allocation of 10.9~12.7 GHz by the ITU<sup>[29]</sup>">
   </image-component>
 
   <image-component
     tag="image"
     source="assets/figure41.png"
-    subtitle="Figure 43: Allocation of 14~14.5 GHz by the ITU<sup>[29]</sup>">
+    subtitle="Figure 68: Allocation of 14~14.5 GHz by the ITU<sup>[29]</sup>">
   </image-component>
 
   <p>
@@ -1016,22 +1600,22 @@
     The selected frequency allocations for our antenna are Rx: 10.7-12.7GHz and Tx: 14.0-14.5GHz. From Figures 42 and 43, these ranges are globally harmonised by the ITU for mobile satellite applications and are widely adopted by major LEO operators like Starlink and OneWeb<sup>[32]</sup>. This standardisation ensures that our design remains interoperable and compliant across multiple regions and service providers, addressing the lack of cross-network compatibility<sup>[3]</sup>.
   </p>
 
-  <h4>4.2.1.6 Dielectric Substrate</h4>
+  <h4>Dielectric Substrate</h4>
   <p>
     Dielectric substrate layers are used to house the patches and the feed. The substrate dielectric constant (ε<sub>r</sub>) and loss tangent (tan δ) affect guided wavelength, patch size, bandwidth, and radiation efficiency<sup>[37]</sup>. Low-ε<sub>r</sub>, low-loss laminates are commonly used in high-performance Ku antennas to maximise efficiency and reduce dielectric loading<sup>[3]</sup>. Other considerations include providing good manufacturability (blind via plating) at modestly higher loss<sup>[3]</sup>, a trade-off between performance (loss/bandwidth) and cost/manufacturability.
   </p>
 
-  <h4>4.2.1.7 Impedance Bandwidth</h4>
+  <h4>Impedance Bandwidth</h4>
   <p>
     Impedance bandwidth (frequency range where |S₁₁| ≤ −10 dB) is a primary performance metric for antenna usability across required bands. Stacked-patch and aperture-coupled topologies have been shown to achieve wide impedance bandwidths, frequently ~20-40% in range, when parasitic resonances and aperture geometry are optimally tuned<sup>[24][26]</sup>. Practical Ku-band designs can therefore meet the Tx (14.0~14.5 GHz) and Rx (10.7~12.7 GHz) (combined 30.2% bandwidth) requirements<sup>[26][27]</sup>, which require computational design and careful tuning of key geometries like air gaps, slot geometry, and parasitic layer dimensions.
   </p>
 
-  <h4>4.2.1.8 AR Bandwidth</h4>
+  <h4>AR Bandwidth</h4>
   <p>
     AR bandwidth (frequency range where AR ≤ 3 dB typically) defines the usable CP range critical for maintaining stable polarization alignment in dynamic LEO links<sup>[24]</sup>. Wide AR bandwidth ensures robust performance against polarization mismatch, Faraday rotation, and dynamic scan angles<sup>[27]</sup>. Stacked and aperture-coupled patches have been shown to significantly enhance AR bandwidth, often achieving 10-25% compared to &lt;3% for single-layer designs<sup>[25][28]</sup>.
   </p>
 
-  <h4>4.2.1.9 Cross-Inteference</h4>
+  <h4>Cross-Inteference</h4>
   <p>
     Cross interference arises from electromagnetic coupling between co-located Tx/Rx or dual-band sub-apertures, leading to signal degradation if not properly mitigated<sup>[20]</sup>. Techniques such as orthogonal polarization, frequency separation, via fencing, and feed isolation are proven to maintain a good (&gt;30 dB) isolation in shared-aperture ESA designs<sup>[21][27]</sup>.
   </p>
@@ -1039,21 +1623,59 @@
   <!-- Appendix B -->
   <h3 id="appendixB">Appendix B</h3>
   
-    Screenshots showing the early stage of liaising with PCB manufacturer (PCBWAY) to ensure manufacturability of layers.
-  
+     <p><strong>1. Air Gap Layers</strong></p>
 
-  <!-- Put your PCBWAY screenshots here -->
-  <image-component
-    tag="image"
-    source="assets/figure42.png"
-    subtitle="">
-  </image-component>
+      <image-component
+        tag="image"
+        source="assets/figure15.png"
+        subtitle="Figure 69: Air gap layer in a stacked-patch antenna<sup>[45]</sup>">
+      </image-component>
+
+      <p>
+        The air gap effectively lowers the effective dielectric constant (εeff) and reactive energy, and broadens Tx/Rx resonances, significantly improving impedance bandwidth (~25-35%)<sup>[46]</sup>. It also reduces mutual coupling for better isolation and minimizes surface-wave losses for higher efficiency and gain<sup>[47]</sup>. Its thickness must be tuned for optimization<sup>[47]</sup>.
+      </p>
+
+      <p><strong>2. Parasitic Patches</strong></p>
+
+      <image-component
+        tag="image"
+        source="assets/figure16.png"
+        subtitle="Figure 70: Bandwidth enhancement with parasitic patch coupled to the driven patch at 2 different resonant frequencies<sup>[48]</sup>">
+      </image-component>
+
+      <p>
+        The addition of coupled parasitic patch(es) forms a dual-resonant structure with closely spaced frequencies, which achieves a wide impedance bandwidth and a smoother reflection coefficient (S<sub>11</sub>)<sup>[48][49]</sup>. They redistribute current density, reduce surface-wave propagation and improve aperture efficiency<sup>[50]</sup>. Furthermore, it stabilizes CP performance<sup>[50]</sup>.
+      </p>
+
+      <p><strong>3. Via Fences</strong></p>
+      <p>
+        Via fences act as electromagnetic shields to prevent surface-wave leakage, significantly reducing cross-polar radiation and enhancing polarization purity<sup>[23][51]</sup>. They also reduce back radiation and parasitic modes, thus stabilizing the impedance response across frequency<sup>[51]</sup>.
+      </p>
+
+      <image-component
+        tag="image"
+        source="assets/figure17.png"
+        subtitle="Figure 71: Via loaded rings around patches 1 and 2<sup>[52]</sup>">
+      </image-component>
 
   <!-- Appendix C -->
-  <h3 id="appendixC">Appendix C</h3>
-  Modelling of parameters of base model (Figure 24)
-
-  <ol>
+  <h3 id="appendixC">Appendix C<sup>[68]</sup></h3>
+  <p
+  The Wilkinson power divider is a fundamental three-port microwave device utilized for either power division or power combining within high-frequency circuits. Unlike simpler T-junction designs, the Wilkinson architecture is specifically engineered to be lossless when the output ports are matched, while remaining reciprocal and providing a matched condition at all ports. In a typical microstrip implementation, the divider utilizes two quarter-wave transformer sections. These sections are designed with a characteristic impedance of 70.7 ohms for a standard 50 ohms system to provide the necessary impedance transformation from the input to the two parallel output ports. At the design frequency, the input power is split equally in magnitude and phase.
+  </p>
+  <image-component
+        tag="image"
+        source="assets/figure72n.png"
+        subtitle="Figure 72:  Geometry (left) and transmission line equivalent (right)<sup>[68]</sup>">
+      </image-component>
+      <p>The primary distinguishing feature of this divider is the incorporation of an isolation resistor connected between the two output ports. This component is critical for dissipating reflected power and ensuring that the two output arms remain electrically isolated from one another, preventing signal leakage between channels. Because the potential difference across the isolation resistor is zero during balanced operation, no power is dissipated in the resistor under ideal conditions, maintaining high radiation efficiency for the overall system.</p>
+      <image-component
+        tag="image"
+        source="assets/figure73n.png"
+        subtitle="Figure 73:  Layout of power divider with Ports 4 and 5 added as the isolation resistor will be added between the outputs<sup>[68]</sup>">
+      </image-component>
+      <p>The performance of the Wilkinson divider is characterized by its port matching and high isolation levels. Technical evaluations indicate that while ideal schematic simulations suggest near-perfect splitting, physical fabrication introduces electromagnetic effects such as parasitic capacitance and edge effects that can slightly degrade the return loss and isolation. Despite these practical constraints, the Wilkinson power divider remains the preferred choice for antenna feed networks, such as those used in phased array radars, because it provides the stability and port-to-port independence required for precise beamforming and signal distribution across a large-scale aperture.</p>
+  <!-- <ol>
     <li>
       <strong>Material Selection</strong>
     <ul>
@@ -1126,11 +1748,98 @@
         <li>Sweeping of feed width and stub length is needed to determine the optimal dimensions<sup>[24]</sup></li>
       </ul>
     </li>
-  </ol>
+  </ol> -->
 
   <!-- Appendix D -->
   <h3 id="appendixD">Appendix D</h3>
-  Parameter Sweep Studies Test Results
+  <p>Starlink Standard Kit Design which suggests the use of H-slots and array tapering design to improve scan performance.</p>
+    <image-component
+    tag="image"
+    source="assets/figure53.png"
+    subtitle="Starlink’s Design Integrating a ‘H-slot’ Aperture">
+  </image-component>
+
+  <image-component
+    tag="image"
+    source="assets/figure54.png"
+    subtitle="Starlink’s Array Tapering Design to Improve Scan Performance">
+  </image-component>
+
+  <!-- Appendix E -->
+  <h3 id="appendixE">Appendix E</h3>
+<h4>1. Determining System Noise Temperature (Tsys)</h4>
+<p>The system noise temperature is primarily composed of the antenna noise temperature (Ta) and the receiver noise temperature (Tr).
+</p>
+<h4>A. Receiver Noise Temperature (Tr)</h4>
+<p>The noise performance of the LNA is given as a Noise Figure (NF) of 1 dB. To use this in a G/T calculation, we convert the NF to an equivalent noise temperature (Te) using the reference temperature T0=290K:
+</p>
+<image-component
+    tag="image"
+    source="assets/figure74n.png"
+    subtitle="">
+  </image-component>
+  <h4>B. Total System Temperature (Tsys)</h4>
+  <p>Assuming an antenna noise temperature (Ta) of approximately 100 K (typical for an Earth station antenna pointed at a satellite at Ku-band with some atmospheric and sidelobe noise), the total system temperature is:
+</p>
+<image-component
+    tag="image"
+    source="assets/figure75n.png"
+    subtitle="">
+</image-component>
+  <h4>2. Calculating G/T in Decibels</h4>
+  <p>The G/T ratio is expressed as the antenna gain (G) minus the system noise temperature in dBK (10log<sub>10</sub>Tsys).</p>
+
+  <h4>A. Convert Tsys to dBK</h4>
+  <image-component
+    tag="image"
+    source="assets/figure76n.png"
+    subtitle="">
+</image-component>
+  <h4>B. Final G/T Calculation</h4>
+  <p>Using projected Rx gain of 32 dBi:</p>
+  <image-component
+    tag="image"
+    source="assets/figure77n.png"
+    subtitle="">
+</image-component>
+<p>Projected G/T: 9.57dB/K</p>
+<p>Required G/T: 6.8dB/K</p>
+<p>Margin: +2.77dB</p>
+<p>Even if we account for the thermal noise contribution of the distribution network (losses between the antenna elements and the LNA), which might add another 1-2 dB of noise figure depending on the layout, the system still comfortably exceeds the 6.8 dB/K target. With a margin of nearly 2.8 dB, the design is robust enough to handle the 2.3 dB scan loss expected at a 53 degree scan angle while remaining above the minimum required sensitivity.
+</p>
+
+<!-- Appendix F -->
+  <h3 id="appendixF">Appendix F</h3>
+  Calculation of Element Spacing, d.
+
+  <image-component
+    tag="image"
+    source="assets/equ1.png"
+    subtitle="">
+  </image-component>
+
+
+  θ<sub>max</sub> = 53° (refer to <a href="#table3">Table 4</a>)
+<p>
+  Calculating: d < 0.55λ<sub>0
+</p>
+<p>
+Using formulas from <a href="#figure17">Figure 17</a>:
+</p>
+
+  <ul>
+    <li>λ<sub>0,Tx</sub> = 21.05mm (f = 14.25GHz)</li>
+    <li>λ<sub>0,Rx</sub> = 25.64mm (f = 11.7GHz)</li>
+  </ul>
+<p>To avoid the grating lobes at maximum scan angle, the element-to-element spacing should be based on the shortest wavelength (the Tx frequency, 14.25 GHz). Hence, d < 10.5mm. In the 2x2 array, d = 10mm was used. </p>
+<image-component
+    tag="image"
+    source="assets/figure78n.png"
+    subtitle="d = 10mm between elements in the 2x2 array">
+  </image-component>
+
+
+  <!-- Parameter Sweep Studies Test Results
 
   
   <image-component
@@ -1169,8 +1878,8 @@
     subtitle="Feed Width Sweep">
   </image-component>
 
-  <!-- Appendix E -->
-  <h3 id="appendixE">Appendix E</h3>
+  Appendix E
+  <!-- <h3 id="appendixE">Appendix E</h3>
   Parameter Tuning of Model with Parasitic Patch
 
   <image-component
@@ -1192,17 +1901,17 @@
   </image-component>
 
   <!-- Appendix F -->
-  <h3 id="appendixF">Appendix F</h3>
+  <!-- <h3 id="appendixF">Appendix F</h3>
   Realized Gain and Radiation Pattern of Model with Parasitic Patch (Figure 37)
 
   <image-component
     tag="image"
     source="assets/figure52.png"
     subtitle="">
-  </image-component>
+  </image-component> -->
 
   <!-- Appendix G -->
-  <h3 id="appendixG">Appendix G</h3>
+  <!-- <h3 id="appendixG">Appendix G</h3>
   Starlink Standard Kit Design
 
   <image-component
@@ -1215,9 +1924,9 @@
     tag="image"
     source="assets/figure54.png"
     subtitle="Starlink’s Array Tapering Design to Improve Scan Performance">
-  </image-component>
+  </image-component> -->
 
-  <!-- Appendix H -->
+  <!-- Appendix H
   <h3 id="appendixH">Appendix H</h3>
   Calculation of Element Spacing, d.
 
@@ -1236,7 +1945,7 @@
     <li>λ<sub>0,Rx</sub> = 25.64mm</li>
   </ul>
 
-  Using the greater λ<sub>0</sub> value (λ<sub>0,Rx</sub>), d = 14.26mm
+  Using the greater λ<sub>0</sub> value (λ<sub>0,Rx</sub>), d = 14.26mm -->
 </div>
 
     <!-- References -->
@@ -1308,6 +2017,16 @@
     <li>[61] Kimouche, H., Abed, D., &amp; Atrouz, B. (2010, May). Small size microstrip slot antennas for Ultra-Wide Band communications. <a href="https://www.researchgate.net/publication/224154197_Small_size_microstrip_slot_antennas_for_Ultra-Wide_Band_communications" target="_blank" rel="noopener noreferrer">https://www.researchgate.net/publication/224154197_Small_size_microstrip_slot_antennas_for_Ultra-Wide_Band_communications</a></li>
     <li>[62] Bob, B., Peter, D., &amp; Jon, K. (n.d.). Phased array antenna patterns-part 2: Grating lobes and beam squint. Analog Devices. <a href="https://www.analog.com/en/resources/analog-dialogue/articles/phased-array-antenna-patterns-part2.html#:~:text=But%20in%20practice%2C%20the%20maximum,/2%20(90%C2%B0)." target="_blank" rel="noopener noreferrer">https://www.analog.com/en/resources/analog-dialogue/articles/phased-array-antenna-patterns-part2.html#:~:text=But%20in%20practice%2C%20the%20maximum,/2%20(90%C2%B0).</a></li>
     <li>[63] Robert R. , R. (n.d.). NASA. <a href="https://ntrs.nasa.gov/api/citations/20180006420/downloads/20180006420.pdf?attachment=true" target="_blank" rel="noopener noreferrer">https://ntrs.nasa.gov/api/citations/20180006420/downloads/20180006420.pdf?attachment=true</a></li>
+    <li>[64] Deshmukh, A. A., & Saleha Shaikh, Ami A. Desai, Kshitij A. Lele, Sudesh Agrawal. (n.d.). Design of Truncated Corner Circularly Polarized Rectangular Microstrip Antenna. <a href="https://www.caeaccess.org/research/icct2015/number1/icct10156.pdf" target="_blank" rel="noopener noreferrer">https://www.caeaccess.org/research/icct2015/number1/icct10156.pdf</a></li>
+    <li>[65] Manidipa Roy, Priyanka Bhardwaj, & Sanjay Kumar Singh. (2022, June). Compact circularly polarized asymmetric-slotted microstrip patch antenna. <a href="https://www.researchgate.net/publication/262903675_Compact_circularly_polarized_asymmetric-slotted_microstrip_patch_antenna" target="_blank" rel="noopener noreferrer">https://www.researchgate.net/publication/262903675_Compact_circularly_polarized_asymmetric-slotted_microstrip_patch_antenna</a></li>
+    <li>[66] Aivon. (2026, April 1). The impact of buried Vias on EMI performance: Minimizing interference in PCBS. <a href="https://www.aivon.com/blog/pcb-knowledge/the-impact-of-buried-vias-on-emi-performance-minimizing-interference-in-pcbs/#:~:text=Buried%20vias%20are%20plated%20through,layouts%20without%20compromising%20electromagnetic%20performance." target="_blank" rel="noopener noreferrer">https://www.aivon.com/blog/pcb-knowledge/the-impact-of-buried-vias-on-emi-performance-minimizing-interference-in-pcbs/#:~:text=Buried%20vias%20are%20plated%20through,layouts%20without%20compromising%20electromagnetic%20performance.</a></li>
+    <li>[67] Cheng, J., Li, R., & Bao, X. Y. (2013, May). Circular polarization patch antenna design with diagonal periodic metallic via holes | request PDF. <a href="https://www.researchgate.net/publication/255569355_Circular_polarization_patch_antenna_design_with_diagonal_periodic_metallic_via_holes" target="_blank" rel="noopener noreferrer">https://www.researchgate.net/publication/255569355_Circular_polarization_patch_antenna_design_with_diagonal_periodic_metallic_via_holes</a></li>
+    <li>[68] Microstrip and CPW power divider design - Chapter 8 PDF Asset Page | keysight. (n.d.-f). <a href="https://www.keysight.com/es/en/assets/7018-05297/technical-overviews/5992-1632.pdf" target="_blank" rel="noopener noreferrer">https://www.keysight.com/es/en/assets/7018-05297/technical-overviews/5992-1632.pdf</a></li>
+    <li>[69] The Signal Path. (2021, January 11). Starlink Dish Phased Array Design, Architecture & RF In-depth Analysis. <a href="https://youtu.be/h6MfM8EFkGg?si=416ziz_ndcPznUNk" target="_blank" rel="noopener noreferrer">https://youtu.be/h6MfM8EFkGg?si=416ziz_ndcPznUNk</a></li>
+
+
+
+
   </ul>
 </div>
 
