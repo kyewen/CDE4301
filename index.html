@@ -271,7 +271,7 @@
       <div id="sub-section-2-1">
         <h3>2.1 Hardware Inefficiency in Current ESA Architectures</h3>
         <p>
-          Traditional ESA terminals use separate apertures for transmit (Tx) and receive (Rx), resulting in larger physical footprints, higher SWaP, and cost<sup>[5][15]</sup>. Moreover, achieving necessary performance like wide scan angles, high gain, and circular polarization to mitigate fading and polarization mismatch, is highly challenging<sup>[16][17]</sup>. The demand is further accentuated in mobile or rooftop terminals where size and manufacturability matter<sup>[3][8]</sup>.
+          Traditional ESA terminals use separate apertures for transmit (Tx) and receive (Rx), resulting in larger physical footprints, higher size, weight, and power (SWaP), and cost<sup>[5][15]</sup>. Moreover, achieving necessary performance like wide scan angles, high gain, and circular polarization to mitigate fading and polarization mismatch, is highly challenging<sup>[16][17]</sup>. The demand is further accentuated in mobile or rooftop terminals where size and manufacturability matter<sup>[3][8]</sup>.
         </p>
       </div>
 
@@ -1078,7 +1078,7 @@
 
 <h4 id="sub-section-6-1-2">6.1.2 Finite Array Design and Simulation</h4>
 
-<h4>6.1.2.1 Boundary Conditions and Excitation Setup</h4>
+<h4>6.1.2.1 Boundary Conditions Setup</h4>
 <p>
   Open Boundary Conditions are applied on all the X-, Y-, and Z-axes to simulate free-space radiation.
 </p>
@@ -1233,10 +1233,14 @@ Despite these shifts, both S₁₁ and S₂₂ remain below -10dB across the ope
 <p>
   The transition from a 2x2 subarray to a full 32-element linear dimension implies a scaling factor of 16 in each dimension, totaling 1024 elements. A significant advantage of scaling to a 32x32 architecture is the transition from an edge-element dominant environment to an embedded element environment<sup>[3][8]</sup>. While the 2x2 subarray is limited by asymmetrical mutual coupling and fringe effects, the 1024-element array functions as a highly periodic structure. This uniformity allows the active reflection coefficient to converge to a steady state, resulting in improved and more predictable impedance matching. By mitigating edge-related discontinuities, the full-scale aperture will achieve enhanced S₁₁ and S₂₂ stability, provided active impedance is managed to prevent scan blindness during wide-angle steering.
 </p>
+<h4>7.2.1 Size, Weight, and Power Requirements</h4>
+<p>From <a href="#table4">Table 4</a>, The proposed 32x32 phased array is required to meet a volume constraint of 320x320x30mm, a mass limit of 6.8kg, and a power envelope of 180W. At the unit-element level, the footprint is of 10x10x2.3mm. The small vertical profile of the unit-element leaves ample headroom within the 30mm thickness for multi-layer PCB integration of the distribution network, cooling and control electronics. While the current research focused primarily on electromagnetic performance and beamforming validation, with less emphasis placed on the specific mass and power optimization of the control electronics and BFICs, the measured efficiency of the 2x2 prototype provides a positive outlook on meeting the weight and power requirements<sup>[3][8]</sup>.</p>
+<h4>7.2.2 Tx and Rx Gains Requirements</h4>
 
 <p>
-  Theoretically, increasing the array size by a factor of 16 provides a gain enhancement of approximately 10log<sub>10</sub>(256)=24dB. Based on the measured 8dBi from the 2x2 subarray, the 32x32 array is projected to achieve a boresight gain of 32dBi at 11.7GHz. Similarly, given the 10dBi measurement at 14.26GHz, the scaled Tx gain is projected to reach 34dBi. Referring back to <a href="#table3">Table 3</a> and <a href="#table4">Table 4</a> for the full array’s targeted specifications and performance, these gain projections confirm that our design provides the necessary aperture efficiency to meet the high-gain requirements of LEO satellite links.
+  Theoretically, increasing the array size by a factor of 16 provides a gain enhancement of approximately 10log<sub>10</sub>(256)=24dB. Based on the measured 8dBi from the 2x2 subarray, the 32x32 array is projected to achieve a boresight gain of 32dBi at 11.7GHz. Similarly, given the 10dBi measurement at 14.26GHz, the scaled Tx gain is projected to reach 34dBi. Referring back to <a href="#table3">Table 3</a> for the full array’s targeted Tx and Rx gains, these gain projections confirm that our design provides the necessary aperture efficiency to meet the high-gain requirements of LEO satellite links.
 </p>
+<h4>7.2.3 Tx EIRP Requirements</h4>
 
 <p>
   To accurately forecast the performance of the full array, the analysis must also account for the integration of active RF front-end components and layout constraints. For the Tx path, the EIRP is calculated by: 
@@ -1251,13 +1255,15 @@ Despite these shifts, both S₁₁ and S₂₂ remain below -10dB across the ope
 <p>
   With a channel output power of ~9dBm, a projected Tx gain of 34dBi, and 1024 individual PAs (+30dB), the system achieves an overall EIRP of 73dBm (43dBW). This exceeds the target specification of 42.5dBW (<a href="#table3">Table 3</a>), allowing for a healthy buffer against feed network losses.
 </p>
+<h4>7.2.4 Rx G/T Requirements</h4>
 
 <p>
   For the receive path, the G/T is calculated using the projected Rx gain (32dBi) and the noise performance of the selected LNA. With a Noise Figure (NF) of 1dB, the system is well-positioned to surpass the 6.8dB/K requirement (refer to <a href="#appendixE">Appendix E</a> for calculations).
 </p>  
+<h4>7.2.5 Scan Angle Requirements</h4>
 
 <p>
-  The target scan volume of ±53° (<a href="#table4">Table 4</a>) is a rigorous design constraint that requires the suppression of grating lobes and the maintenance of polarization purity at high offsets. <a href="#appendixF">Appendix F</a> shows that the element spacing of 10mm is adequate to meet the maximum scan angle. Moreover, the high port isolation (S₂₁<-20dB) verified in the 2x2 prototype is a strong indicator of stability; low mutual coupling reduces the active impedance variations that typically cause scan blindness at wide angles. Furthermore, the broad-beam characteristics observed in the unit-element (91.5°-98.5°) ensure that the "element factor" does not prematurely attenuate the "array factor" during steering. At the maximum ±53° scan angle, the array will experience a projection-based scan loss of approximately cos(53°)=2.3dB. Given the projected boresight gain of 32-34 dBi, the system maintains sufficient headroom to ensure that the gain at the scan edge remains above the operational threshold for consistent satellite connectivity.
+  The target scan volume of ±53° (<a href="#table4">Table 4</a>) is a rigorous design constraint that requires the suppression of grating lobes and the maintenance of polarization purity at high offsets. <a href="#appendixF">Appendix F</a> shows that the element spacing of 10mm is adequate to meet the maximum scan angle. Moreover, the high port isolation (S₂₁<-20dB) verified in the 2x2 prototype shows low mutual coupling which reduces the active impedance variations that typically cause scan blindness at wide angles. Furthermore, the broad-beam characteristics observed in the unit-element (91.5°-98.5°) ensure that the "element factor" does not prematurely attenuate the "array factor" during steering. At the maximum ±53° scan angle, the array will experience a projection-based scan loss of approximately cos(53°)=2.3dB. Given the projected boresight gain of 32-34 dBi, the system maintains sufficient headroom to ensure that the gain at the scan edge remains above the operational threshold for consistent satellite connectivity.
 </p>
 
 <p>
@@ -1283,12 +1289,14 @@ Despite these shifts, both S₁₁ and S₂₂ remain below -10dB across the ope
 </p>
 
 <p>
-  To enhance scanning performance out to ±53°, future iterations will implement array tapering (amplitude weighting). While uniform excitation maximizes gain, it produces high sidelobes that can lead to interference. By applying a tapering profile, we can suppress sidelobes and improve the beam shape during wide-angle steering. This must be balanced against the resulting "taper loss" to ensure the 42.5dBW EIRP and 6.8dB/K G/T targets are maintained.
+  Additionally, as the array scales, the cumulative phase and amplitude errors within the corporate feed network can lead to beam squint and increased sidelobe levels. To mitigate this, a digital beamforming backend will be integrated to allow for real-time calibration and adaptive null-steering. "Active element pattern" simulations are required to mitigate scan blindness caused by cumulative mutual coupling in the 1024-element environment.
 </p>
 
 <p>
-  Additionally, as the array scales, the cumulative phase and amplitude errors within the corporate feed network can lead to beam squint and increased sidelobe levels. To mitigate this, a digital beamforming backend will be integrated to allow for real-time calibration and adaptive null-steering. "Active element pattern" simulations are required to mitigate scan blindness caused by cumulative mutual coupling in the 1024-element environment.
+  To enhance scanning performance out to ±53°, future iterations will implement array tapering (amplitude weighting). While uniform excitation maximizes gain, it produces high sidelobes that can lead to interference. By applying a tapering profile, we can suppress sidelobes and improve the beam shape during wide-angle steering. This must be balanced against the resulting "taper loss" to ensure the 42.5dBW EIRP and 6.8dB/K G/T targets are maintained.
 </p>
+
+
 
 <p>
   Finally, to manage the dynamic nature of LEO constellations, we are looking at integrating the digital beamforming backend with Machine Learning algorithms which reside within the BFIC logic to predict satellite trajectories and optimize beam-switching. This predictive approach is essential for handling the frequent handovers required as LEO satellites move rapidly across the sky, ensuring seamless connectivity and reduced latency for moving-platform applications. This intelligent backend will be critical for maintaining a resilient link in high-density LEO satellite environments.
@@ -1751,7 +1759,7 @@ Despite these shifts, both S₁₁ and S₂₂ remain below -10dB across the ope
   </ol> -->
 
   <!-- Appendix D -->
-  <h3 id="appendixD">Appendix D</h3>
+  <h3 id="appendixD">Appendix D<sup>[69]</sup></h3>
   <p>Starlink Standard Kit Design which suggests the use of H-slots and array tapering design to improve scan performance.</p>
     <image-component
     tag="image"
